@@ -1,0 +1,109 @@
+<?php
+
+/**
+ * This is the model class for table "actividad_tipo_participante".
+ *
+ * The followings are the available columns in table 'actividad_tipo_participante':
+ * @property integer $id_actividad_tipo_participante
+ * @property integer $fk_id_actividad_proyecto
+ * @property integer $fk_id_edades_beneficiario
+ * @property integer $cantidad_actividad_tipo_participante
+ * @property string $sexo_actividad_tipo_participante
+ *
+ * The followings are the available model relations:
+ * @property EdadesBeneficiario $fkIdEdadesBeneficiario
+ * @property ActividadProyecto $fkIdActividadProyecto
+ */
+class ActividadTipoParticipante extends CTQ
+{
+	/**
+	 * @return string the associated database table name
+	 */
+	public function tableName()
+	{
+		return 'actividad_tipo_participante';
+	}
+
+	/**
+	 * @return array validation rules for model attributes.
+	 */
+	public function rules()
+	{
+		// NOTE: you should only define rules for those attributes that
+		// will receive user inputs.
+		return array(
+			array('fk_id_actividad_proyecto, fk_id_edades_beneficiario, cantidad_actividad_tipo_participante, sexo_actividad_tipo_participante', 'required'),
+			array('fk_id_actividad_proyecto, fk_id_edades_beneficiario, cantidad_actividad_tipo_participante', 'numerical', 'integerOnly'=>true),
+			// The following rule is used by search().
+			// @todo Please remove those attributes that should not be searched.
+			array('id_actividad_tipo_participante, fk_id_actividad_proyecto, fk_id_edades_beneficiario, cantidad_actividad_tipo_participante, sexo_actividad_tipo_participante', 'safe', 'on'=>'search'),
+		);
+	}
+
+	/**
+	 * @return array relational rules.
+	 */
+	public function relations()
+	{
+		// NOTE: you may need to adjust the relation name and the related
+		// class name for the relations automatically generated below.
+		return array(
+			'fkIdEdadesBeneficiario' => array(self::BELONGS_TO, 'EdadesBeneficiario', 'fk_id_edades_beneficiario'),
+			'fkIdActividadProyecto' => array(self::BELONGS_TO, 'ActividadProyecto', 'fk_id_actividad_proyecto'),
+		);
+	}
+
+	/**
+	 * @return array customized attribute labels (name=>label)
+	 */
+	public function attributeLabels()
+	{
+		return array(
+			'id_actividad_tipo_participante' => 'Id Actividad Tipo Participante',
+			'fk_id_actividad_proyecto' => 'Fk Id Actividad Proyecto',
+			'fk_id_edades_beneficiario' => 'Fk Id Edades Beneficiario',
+			'cantidad_actividad_tipo_participante' => 'Cantidad Actividad Tipo Participante',
+			'sexo_actividad_tipo_participante' => 'Sexo Actividad Tipo Participante',
+		);
+	}
+
+	/**
+	 * Retrieves a list of models based on the current search/filter conditions.
+	 *
+	 * Typical usecase:
+	 * - Initialize the model fields with values from filter form.
+	 * - Execute this method to get CActiveDataProvider instance which will filter
+	 * models according to data in model fields.
+	 * - Pass data provider to CGridView, CListView or any similar widget.
+	 *
+	 * @return CActiveDataProvider the data provider that can return the models
+	 * based on the search/filter conditions.
+	 */
+	public function search()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('id_actividad_tipo_participante',$this->id_actividad_tipo_participante);
+		$criteria->compare('fk_id_actividad_proyecto',$this->fk_id_actividad_proyecto);
+		$criteria->compare('fk_id_edades_beneficiario',$this->fk_id_edades_beneficiario);
+		$criteria->compare('cantidad_actividad_tipo_participante',$this->cantidad_actividad_tipo_participante);
+		$criteria->compare('sexo_actividad_tipo_participante',$this->sexo_actividad_tipo_participante,true);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+
+	/**
+	 * Returns the static model of the specified AR class.
+	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * @param string $className active record class name.
+	 * @return ActividadTipoParticipante the static model class
+	 */
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
+	}
+}

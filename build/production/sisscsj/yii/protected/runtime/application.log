@@ -1,0 +1,1398 @@
+2015/07/17 17:55:40 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'bapellido_paterno_beneficiario' in 'where clause'. La sentencia SQL ejecutada fue: SELECT COUNT(DISTINCT `t`.id_familia) FROM `familia` `t` LEFT JOIN familia_metodo_planificacion_familiar AS fmpf ON fmpf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario_familia AS bf ON bf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario AS b ON bf.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN beneficiario_entidad AS be ON be.fk_id_beneficiario = b.id_beneficiario WHERE bapellido_paterno_beneficiario LIKE 'peña1' OR bapellido_materno_beneficiario LIKE 'peña2'.
+in /var/www/sisscsj/yii/protected/controllers/Familia/Read.php (78)
+in /var/www/sisscsj/yii/index.php (18)
+2015/07/17 17:55:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'bapellido_paterno_beneficiario' in 'where clause'. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.id_familia) FROM `familia` `t` LEFT JOIN familia_metodo_planificacion_familiar AS fmpf ON fmpf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario_familia AS bf ON bf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario AS b ON bf.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN beneficiario_entidad AS be ON be.fk_id_beneficiario = b.id_beneficiario WHERE bapellido_paterno_beneficiario LIKE 'peña1' OR bapellido_materno_beneficiario LIKE 'peña2'' in /var/www/yii-framework/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/db/CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php(1606): CDbCommand->queryScalar()
+#2 /var/www/sisscsj/yii/protected/controllers/Familia/Read.php(78): CActiveRecord->count(Object(CDbCriteria))
+#3 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Read->run()
+#4 /var/www/yii-framework/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#5 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(Read))
+#6 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Read), Array)
+#12 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Familia')
+#14 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#16 {main}
+REQUEST_URI=/sisscsj/yii/index.php/Familia?_dc=1437168637670&page=1&start=0&limit=10&filter=%5B%7B%22property%22%3A%22apellido_paterno_beneficiario%22%2C%22value%22%3A%22pe%5Cu00f1a1%22%7D%2C%7B%22property%22%3A%22apellido_materno_beneficiario%22%2C%22value%22%3A%22pe%5Cu00f1a2%22%7D%5D&callback=Ext.data.JsonP.callback6
+---
+2015/07/20 18:26:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "BeneficiarioTipoIdentificacion" solicitada.' in /var/www/yii-framework/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/web/CController.php(270): CController->missingAction('BeneficiarioTip...')
+#1 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('BeneficiarioTip...')
+#2 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Reporte/Benefic...')
+#3 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/sisscsj/yii/index.php/Reporte/BeneficiarioTipoIdentificacion?records={%22fk_id_beneficiario%22:1,%22fk_id_tipo_identificacion%22;1,%22numero_tipo_identificacion%22:123,%22primario_tipo_identificacion%22:1}&callback=Ext
+---
+2015/07/20 18:27:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "BeneficiarioTipoIdentificacion" solicitada.' in /var/www/yii-framework/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/web/CController.php(270): CController->missingAction('BeneficiarioTip...')
+#1 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('BeneficiarioTip...')
+#2 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Reporte/Benefic...')
+#3 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/sisscsj/yii/index.php/Reporte/BeneficiarioTipoIdentificacion/create?records={%22fk_id_beneficiario%22:1,%22fk_id_tipo_identificacion%22;1,%22numero_tipo_identificacion%22:123,%22primario_tipo_identificacion%22:1}&callback=Ext
+---
+2015/07/20 19:20:44 [error] [exception.CException] exception 'CException' with message 'La propiedad "BeneficiarioTipoIdentificacion"."id_beneficiario_tipo_identificacionj" no se encuentra definida.' in /var/www/yii-framework/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('id_beneficiario...')
+#1 /var/www/sisscsj/yii/protected/controllers/BeneficiarioTipoIdentificacion/Read.php(73): CActiveRecord->__get('id_beneficiario...')
+#2 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Read->run()
+#3 /var/www/yii-framework/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#4 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(Read))
+#5 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Read), Array)
+#11 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('')
+#12 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('BeneficiarioTip...')
+#13 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#14 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#15 {main}
+REQUEST_URI=/sisscsj/yii/index.php/BeneficiarioTipoIdentificacion/?start=0&limit=1&callback=Ext
+---
+2015/09/23 16:57:55 [error] [php] Invalid argument supplied for foreach() (/var/www/sisscsj/yii/protected/controllers/Beneficiario/Update.php:59)
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): BeneficiarioController->runAction()
+#1 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/yii-framework/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): BeneficiarioController->filterAccessControl()
+#4 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii-framework/yii/framework/web/CController.php(265): BeneficiarioController->runActionWithFilters()
+#7 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): BeneficiarioController->run()
+#8 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/sisscsj/yii/index.php(18): CWebApplication->run()
+REQUEST_URI=/sisscsj/yii/index.php/beneficiario/update?records={%22id_beneficiario%22:%221668%22,%22fk_id_religion%22:%221%22,%22fk_id_entidad_salud%22:%221%22,%22fk_id_curso%22:%221%22,%22fk_id_nivel%22:%22%22,%22fk_id_turno%22:%22%22,%22fk_id_formacion%22:%22%22,%22codigo_beneficiario%22:%22%22,%22primer_nombre_beneficiario%22:%22prueba%22,%22segundo_nombre_beneficiario%22:%22prueba%22,%22apellido_paterno_beneficiario%22:%22prueba%22,%22apellido_materno_beneficiario%22:%22prueba%22,%22fecha_nacimiento_beneficiario%22:%222015-05-09%22,%22sexo_beneficiario%22:%22m%22,%22numero_hijo_beneficiario%22:%221%22,%22fotografia_beneficiario%22:%22%22,%22trabaja_beneficiario%22:%221%22,%22observacion_beneficiario%22:%22ninguna%22,%22carnet_de_salud_beneficiario%22,%2256464%22}&callback=Ext
+in /var/www/sisscsj/yii/protected/controllers/Beneficiario/Update.php (59)
+in /var/www/sisscsj/yii/index.php (18)
+2015/09/23 18:27:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "famlia"' in /var/www/yii-framework/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('famlia')
+#1 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/sisscsj/yii/index.php/famlia?callback=Ext
+---
+2015/09/23 18:28:00 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 9. La sentencia SQL ejecutada fue: SELECT COUNT(DISTINCT `t`.id_familia) FROM `familia` `t` LEFT JOIN familia_metodo_planificacion_familiar AS fmpf ON fmpf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario_familia AS bf ON bf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario AS b ON bf.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN beneficiario_entidad AS be ON be.fk_id_beneficiario = b.id_beneficiario WHERE be.fk_id_entidad IN (SELECT
+ue.fk_id_entidad
+FROM
+usuario_entidad AS ue
+WHERE
+ue.fk_id_usuario = ).
+in /var/www/sisscsj/yii/protected/controllers/Familia/Read.php (78)
+in /var/www/sisscsj/yii/index.php (18)
+2015/09/23 18:28:00 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 9. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.id_familia) FROM `familia` `t` LEFT JOIN familia_metodo_planificacion_familiar AS fmpf ON fmpf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario_familia AS bf ON bf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario AS b ON bf.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN beneficiario_entidad AS be ON be.fk_id_beneficiario = b.id_beneficiario WHERE be.fk_id_entidad IN (SELECT
+ue.fk_id_entidad
+FROM
+usuario_entidad AS ue
+WHERE
+ue.fk_id_usuario = )' in /var/www/yii-framework/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/db/CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php(1606): CDbCommand->queryScalar()
+#2 /var/www/sisscsj/yii/protected/controllers/Familia/Read.php(78): CActiveRecord->count(Object(CDbCriteria))
+#3 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Read->run()
+#4 /var/www/yii-framework/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#5 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(Read))
+#6 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Read), Array)
+#12 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('familia')
+#14 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#16 {main}
+REQUEST_URI=/sisscsj/yii/index.php/familia?start=0&limit=10&callback=Ext
+---
+2015/09/23 18:28:23 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 9. La sentencia SQL ejecutada fue: SELECT COUNT(DISTINCT `t`.id_familia) FROM `familia` `t` LEFT JOIN familia_metodo_planificacion_familiar AS fmpf ON fmpf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario_familia AS bf ON bf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario AS b ON bf.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN beneficiario_entidad AS be ON be.fk_id_beneficiario = b.id_beneficiario WHERE be.fk_id_entidad IN (SELECT
+ue.fk_id_entidad
+FROM
+usuario_entidad AS ue
+WHERE
+ue.fk_id_usuario = ).
+in /var/www/sisscsj/yii/protected/controllers/Familia/Read.php (78)
+in /var/www/sisscsj/yii/index.php (18)
+2015/09/23 18:28:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 9. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.id_familia) FROM `familia` `t` LEFT JOIN familia_metodo_planificacion_familiar AS fmpf ON fmpf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario_familia AS bf ON bf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario AS b ON bf.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN beneficiario_entidad AS be ON be.fk_id_beneficiario = b.id_beneficiario WHERE be.fk_id_entidad IN (SELECT
+ue.fk_id_entidad
+FROM
+usuario_entidad AS ue
+WHERE
+ue.fk_id_usuario = )' in /var/www/yii-framework/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/db/CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php(1606): CDbCommand->queryScalar()
+#2 /var/www/sisscsj/yii/protected/controllers/Familia/Read.php(78): CActiveRecord->count(Object(CDbCriteria))
+#3 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Read->run()
+#4 /var/www/yii-framework/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#5 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(Read))
+#6 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Read), Array)
+#12 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('familia')
+#14 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#16 {main}
+REQUEST_URI=/sisscsj/yii/index.php/familia?start=0&limit=10&callback=Ext
+---
+2015/09/23 18:28:27 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 9. La sentencia SQL ejecutada fue: SELECT COUNT(DISTINCT `t`.id_familia) FROM `familia` `t` LEFT JOIN familia_metodo_planificacion_familiar AS fmpf ON fmpf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario_familia AS bf ON bf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario AS b ON bf.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN beneficiario_entidad AS be ON be.fk_id_beneficiario = b.id_beneficiario WHERE be.fk_id_entidad IN (SELECT
+ue.fk_id_entidad
+FROM
+usuario_entidad AS ue
+WHERE
+ue.fk_id_usuario = ).
+in /var/www/sisscsj/yii/protected/controllers/Familia/Read.php (78)
+in /var/www/sisscsj/yii/index.php (18)
+2015/09/23 18:28:27 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 9. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.id_familia) FROM `familia` `t` LEFT JOIN familia_metodo_planificacion_familiar AS fmpf ON fmpf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario_familia AS bf ON bf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario AS b ON bf.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN beneficiario_entidad AS be ON be.fk_id_beneficiario = b.id_beneficiario WHERE be.fk_id_entidad IN (SELECT
+ue.fk_id_entidad
+FROM
+usuario_entidad AS ue
+WHERE
+ue.fk_id_usuario = )' in /var/www/yii-framework/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/db/CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php(1606): CDbCommand->queryScalar()
+#2 /var/www/sisscsj/yii/protected/controllers/Familia/Read.php(78): CActiveRecord->count(Object(CDbCriteria))
+#3 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Read->run()
+#4 /var/www/yii-framework/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#5 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(Read))
+#6 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Read), Array)
+#12 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('familia')
+#14 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#16 {main}
+REQUEST_URI=/sisscsj/yii/index.php/familia?start=0&limit=10&callback=Ext
+---
+2015/09/23 18:31:00 [error] [exception.CException] exception 'CException' with message 'La propiedad "CDbCriteria"."addCondition" no se encuentra definida.' in /var/www/yii-framework/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/sisscsj/yii/protected/controllers/Familia/Read.php(76): CComponent->__set('addCondition', ' LIKE '%%'')
+#1 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Read->run()
+#2 /var/www/yii-framework/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#3 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(Read))
+#4 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Read), Array)
+#10 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('')
+#11 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('familia')
+#12 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#14 {main}
+REQUEST_URI=/sisscsj/yii/index.php/familia?start=0&limit=10&filter=[{%22primer_nombre_beneficiario%22:%22v%22}]&callback=Ext
+---
+2015/09/23 18:31:25 [error] [exception.CException] exception 'CException' with message 'La propiedad "CDbCriteria"."addCondition" no se encuentra definida.' in /var/www/yii-framework/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/sisscsj/yii/protected/controllers/Familia/Read.php(76): CComponent->__set('addCondition', 'b.primer_nombre...')
+#1 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Read->run()
+#2 /var/www/yii-framework/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#3 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(Read))
+#4 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Read), Array)
+#10 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('')
+#11 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('familia')
+#12 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#14 {main}
+REQUEST_URI=/sisscsj/yii/index.php/familia?start=0&limit=10&filter=[{%22property%22:%22primer_nombre_beneficiario%22,%22values%22:%22v%22}]&callback=Ext
+---
+2015/09/23 18:45:15 [error] [exception.CException] exception 'CException' with message 'La propiedad "CDbCriteria"."addCondition" no se encuentra definida.' in /var/www/yii-framework/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/sisscsj/yii/protected/controllers/Familia/Read.php(76): CComponent->__set('addCondition', 'b.primer_nombre...')
+#1 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Read->run()
+#2 /var/www/yii-framework/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#3 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(Read))
+#4 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Read), Array)
+#10 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('')
+#11 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('familia')
+#12 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#14 {main}
+REQUEST_URI=/sisscsj/yii/index.php/familia?start=0&limit=10&filter=[{%22property%22:%22primer_nombre_beneficiario%22,%22values%22:%22v%22}]&callback=Ext
+---
+2015/09/23 18:45:41 [error] [exception.CException] exception 'CException' with message 'La propiedad "CDbCriteria"."addcondition" no se encuentra definida.' in /var/www/yii-framework/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/sisscsj/yii/protected/controllers/Familia/Read.php(76): CComponent->__set('addcondition', 'b.primer_nombre...')
+#1 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Read->run()
+#2 /var/www/yii-framework/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#3 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(Read))
+#4 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Read), Array)
+#10 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('')
+#11 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('familia')
+#12 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#14 {main}
+REQUEST_URI=/sisscsj/yii/index.php/familia?start=0&limit=10&filter=[{%22property%22:%22primer_nombre_beneficiario%22,%22values%22:%22v%22}]&callback=Ext
+---
+2015/09/28 10:15:09 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '":"CFTC LIKE '%%'' at line 11. La sentencia SQL ejecutada fue: SELECT COUNT(DISTINCT `t`.id_familia) FROM `familia` `t` LEFT JOIN familia_metodo_planificacion_familiar AS fmpf ON fmpf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario_familia AS bf ON bf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario AS b ON bf.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN beneficiario_entidad AS be ON be.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN beneficiario_donante AS bd ON bd.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN donante AS d ON bd.fk_id_donante = d.id_donante WHERE be.fk_id_entidad IN (SELECT
+ue.fk_id_entidad
+FROM
+usuario_entidad AS ue
+WHERE
+ue.fk_id_usuario = 1) AND nombre_donante":"CFTC LIKE '%%'.
+in /var/www/sisscsj/yii/protected/controllers/Familia/Read.php (93)
+in /var/www/sisscsj/yii/index.php (18)
+2015/09/28 10:15:09 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '":"CFTC LIKE '%%'' at line 11. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.id_familia) FROM `familia` `t` LEFT JOIN familia_metodo_planificacion_familiar AS fmpf ON fmpf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario_familia AS bf ON bf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario AS b ON bf.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN beneficiario_entidad AS be ON be.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN beneficiario_donante AS bd ON bd.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN donante AS d ON bd.fk_id_donante = d.id_donante WHERE be.fk_id_entidad IN (SELECT
+ue.fk_id_entidad
+FROM
+usuario_entidad AS ue
+WHERE
+ue.fk_id_usuario = 1) AND nombre_donante":"CFTC LIKE '%%'' in /var/www/yii-framework/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/db/CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php(1606): CDbCommand->queryScalar()
+#2 /var/www/sisscsj/yii/protected/controllers/Familia/Read.php(93): CActiveRecord->count(Object(CDbCriteria))
+#3 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Read->run()
+#4 /var/www/yii-framework/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#5 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(Read))
+#6 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Read), Array)
+#12 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('familia')
+#14 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#16 {main}
+REQUEST_URI=/sisscsj/yii/index.php/familia?start=0&limit=4&filter=[{%22property%22:%22nombre_donante%22:%22CFTC%22}]&callback=Ext
+---
+2015/09/28 10:32:41 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AN d.nombre_donante LIKE '%CFTC%'' at line 11. La sentencia SQL ejecutada fue: SELECT COUNT(DISTINCT `t`.id_familia) FROM `familia` `t` LEFT JOIN familia_metodo_planificacion_familiar AS fmpf ON fmpf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario_familia AS bf ON bf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario AS b ON bf.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN beneficiario_entidad AS be ON be.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN beneficiario_donante AS bd ON bd.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN donante AS d ON bd.fk_id_donante = d.id_donante WHERE be.fk_id_entidad IN (SELECT
+ue.fk_id_entidad
+FROM
+usuario_entidad AS ue
+WHERE
+ue.fk_id_usuario = 1) AN d.nombre_donante LIKE '%CFTC%'.
+in /var/www/sisscsj/yii/protected/controllers/Familia/Read.php (93)
+in /var/www/sisscsj/yii/index.php (18)
+2015/09/28 10:32:41 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AN d.nombre_donante LIKE '%CFTC%'' at line 11. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.id_familia) FROM `familia` `t` LEFT JOIN familia_metodo_planificacion_familiar AS fmpf ON fmpf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario_familia AS bf ON bf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario AS b ON bf.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN beneficiario_entidad AS be ON be.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN beneficiario_donante AS bd ON bd.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN donante AS d ON bd.fk_id_donante = d.id_donante WHERE be.fk_id_entidad IN (SELECT
+ue.fk_id_entidad
+FROM
+usuario_entidad AS ue
+WHERE
+ue.fk_id_usuario = 1) AN d.nombre_donante LIKE '%CFTC%'' in /var/www/yii-framework/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/db/CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php(1606): CDbCommand->queryScalar()
+#2 /var/www/sisscsj/yii/protected/controllers/Familia/Read.php(93): CActiveRecord->count(Object(CDbCriteria))
+#3 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Read->run()
+#4 /var/www/yii-framework/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#5 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(Read))
+#6 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Read), Array)
+#12 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('familia')
+#14 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#16 {main}
+REQUEST_URI=/sisscsj/yii/index.php/familia?start=0&limit=140&filter=[{%22property%22:%22nombre_donante%22,%22value%22:%22CFTC%22}]&callback=Ext
+---
+2015/09/28 10:34:23 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AN d.nombre_donante LIKE '%CFTC%' ORDER BY id_familia asc LIMIT 140' at line 11. La sentencia SQL ejecutada fue: SELECT DISTINCT `t`.`id_familia`, `t`.`codigo_familia`, `t`.`codigo_familia_antiguo`, `t`.`numero_hijos_viven_familia`, `t`.`estado_familia`, `t`.`fecha_creacion_familia` FROM `familia` `t` LEFT JOIN familia_metodo_planificacion_familiar AS fmpf ON fmpf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario_familia AS bf ON bf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario AS b ON bf.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN beneficiario_entidad AS be ON be.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN beneficiario_donante AS bd ON bd.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN donante AS d ON bd.fk_id_donante = d.id_donante WHERE be.fk_id_entidad IN (SELECT
+ue.fk_id_entidad
+FROM
+usuario_entidad AS ue
+WHERE
+ue.fk_id_usuario = 1) AN d.nombre_donante LIKE '%CFTC%' ORDER BY id_familia asc LIMIT 140.
+in /var/www/sisscsj/yii/protected/controllers/Familia/Read.php (97)
+in /var/www/sisscsj/yii/index.php (18)
+2015/09/28 10:34:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AN d.nombre_donante LIKE '%CFTC%' ORDER BY id_familia asc LIMIT 140' at line 11. The SQL statement executed was: SELECT DISTINCT `t`.`id_familia`, `t`.`codigo_familia`, `t`.`codigo_familia_antiguo`, `t`.`numero_hijos_viven_familia`, `t`.`estado_familia`, `t`.`fecha_creacion_familia` FROM `familia` `t` LEFT JOIN familia_metodo_planificacion_familiar AS fmpf ON fmpf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario_familia AS bf ON bf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario AS b ON bf.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN beneficiario_entidad AS be ON be.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN beneficiario_donante AS bd ON bd.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN donante AS d ON bd.fk_id_donante = d.id_donante WHERE be.fk_id_entidad IN (SELECT
+ue.fk_id_entidad
+FROM
+usuario_entidad AS ue
+WHERE
+ue.fk_id_usuario = 1) AN d.nombre_donante LIKE '%CFTC%' ORDER BY id_familia asc LIMIT 140' in /var/www/yii-framework/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php(1356): CDbCommand->queryAll()
+#2 /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php(1475): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /var/www/sisscsj/yii/protected/controllers/Familia/Read.php(97): CActiveRecord->findAll(Object(CDbCriteria))
+#4 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Read->run()
+#5 /var/www/yii-framework/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#6 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(Read))
+#7 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Read), Array)
+#13 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('')
+#14 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('familia')
+#15 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#17 {main}
+REQUEST_URI=/sisscsj/yii/index.php/familia?start=0&limit=140&filter=[{%22property%22:%22nombre_donante%22,%22value%22:%22CFTC%22}]&callback=Ext
+---
+2015/09/28 16:31:53 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 25. La sentencia SQL ejecutada fue: SELECT
+b.primer_nombre_beneficiario AS Primer_Nombre,
+b.segundo_nombre_beneficiario AS Segundo_Nombre,
+b.apellido_paterno_beneficiario AS Apellido_Paterno,
+b.apellido_materno_beneficiario AS Apellido_Materno,
+b.sexo_beneficiario AS Sexo,
+b.fecha_nacimiento_beneficiario AS Fecha_de_Nacimiento,
+round(datediff(sysdate(),b.fecha_nacimiento_beneficiario)/365) as Edad,
+r.nombre_religion as Religion,
+b.carnet_de_salud_beneficiario AS Carnet_de_Salud,
+b.trabaja_beneficiario AS Trabaja,
+b.libreta_escolar_beneficiario AS Libreta_Escolar,
+b.fotografia_beneficiario,
+b.numero_caso_beneficiario_patrocinador AS Nro_de_Caso,
+c.nombre_curso AS Curso,
+n.nombre_nivel AS Nivel,
+f.nombre_formacion AS Formacion
+FROM
+beneficiario AS b
+LEFT JOIN religion AS r ON b.fk_id_religion = r.id_religion
+LEFT JOIN curso AS c ON b.fk_id_curso = c.id_curso
+LEFT JOIN nivel AS n ON b.fk_id_nivel = n.id_nivel
+LEFT JOIN formacion as f ON b.fk_id_formacion = f.id_formacion
+WHERE
+b.id_beneficiario = .
+in /var/www/sisscsj/yii/protected/models/CTQ.php (252)
+in /var/www/sisscsj/yii/protected/controllers/Reporte/Reporte3.php (33)
+in /var/www/sisscsj/yii/index.php (18)
+2015/09/28 16:31:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 25. The SQL statement executed was: SELECT
+b.primer_nombre_beneficiario AS Primer_Nombre,
+b.segundo_nombre_beneficiario AS Segundo_Nombre,
+b.apellido_paterno_beneficiario AS Apellido_Paterno,
+b.apellido_materno_beneficiario AS Apellido_Materno,
+b.sexo_beneficiario AS Sexo,
+b.fecha_nacimiento_beneficiario AS Fecha_de_Nacimiento,
+round(datediff(sysdate(),b.fecha_nacimiento_beneficiario)/365) as Edad,
+r.nombre_religion as Religion,
+b.carnet_de_salud_beneficiario AS Carnet_de_Salud,
+b.trabaja_beneficiario AS Trabaja,
+b.libreta_escolar_beneficiario AS Libreta_Escolar,
+b.fotografia_beneficiario,
+b.numero_caso_beneficiario_patrocinador AS Nro_de_Caso,
+c.nombre_curso AS Curso,
+n.nombre_nivel AS Nivel,
+f.nombre_formacion AS Formacion
+FROM
+beneficiario AS b
+LEFT JOIN religion AS r ON b.fk_id_religion = r.id_religion
+LEFT JOIN curso AS c ON b.fk_id_curso = c.id_curso
+LEFT JOIN nivel AS n ON b.fk_id_nivel = n.id_nivel
+LEFT JOIN formacion as f ON b.fk_id_formacion = f.id_formacion
+WHERE
+b.id_beneficiario = ' in /var/www/yii-framework/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/sisscsj/yii/protected/models/CTQ.php(252): CDbCommand->queryAll()
+#2 /var/www/sisscsj/yii/protected/controllers/Reporte/Reporte3.php(33): CTQ->consulta1_1_de_rep2(NULL)
+#3 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Reporte3->run()
+#4 /var/www/yii-framework/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#5 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(Reporte3))
+#6 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Reporte3), Array)
+#12 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('reporte3')
+#13 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('reporte/reporte...')
+#14 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#16 {main}
+REQUEST_URI=/sisscsj/yii/index.php/reporte/reporte3?start=0&limit=10&id={%22id_beneficiario%22:48}&callback=Ext
+---
+2015/09/28 16:32:36 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sisscsj.beneficiario_patrocinador' doesn't exist. La sentencia SQL ejecutada fue: SELECT
+bp.numero_caso_beneficiario_patrocinador AS Nro_de_Caso
+FROM
+beneficiario AS b
+INNER JOIN beneficiario_patrocinador AS bp ON bp.fk_id_beneficiario = b.id_beneficiario
+WHERE
+b.id_beneficiario = 48.
+in /var/www/sisscsj/yii/protected/models/CTQ.php (282)
+in /var/www/sisscsj/yii/protected/controllers/Reporte/Reporte3.php (36)
+in /var/www/sisscsj/yii/index.php (18)
+2015/09/28 16:32:36 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sisscsj.beneficiario_patrocinador' doesn't exist. The SQL statement executed was: SELECT
+bp.numero_caso_beneficiario_patrocinador AS Nro_de_Caso
+FROM
+beneficiario AS b
+INNER JOIN beneficiario_patrocinador AS bp ON bp.fk_id_beneficiario = b.id_beneficiario
+WHERE
+b.id_beneficiario = 48' in /var/www/yii-framework/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/sisscsj/yii/protected/models/CTQ.php(282): CDbCommand->queryAll()
+#2 /var/www/sisscsj/yii/protected/controllers/Reporte/Reporte3.php(36): CTQ->consulta1_3_de_rep2(48)
+#3 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Reporte3->run()
+#4 /var/www/yii-framework/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#5 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(Reporte3))
+#6 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Reporte3), Array)
+#12 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('reporte3')
+#13 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('reporte/reporte...')
+#14 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#16 {main}
+REQUEST_URI=/sisscsj/yii/index.php/reporte/reporte3?start=0&limit=10&id={%22id_beneficiario%22:[48]}&callback=Ext
+---
+2015/09/28 11:44:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "reporte4" solicitada.' in /var/www/yii-framework/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/web/CController.php(270): CController->missingAction('reporte4')
+#1 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('reporte4')
+#2 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('reporte/reporte...')
+#3 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/sisscsj/yii/index.php/reporte/reporte4?start=0&limit=10&id=48&callback=Ext
+---
+2015/09/28 16:44:37 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sisscsj.beneficiario_patrocinador' doesn't exist. La sentencia SQL ejecutada fue: SELECT
+bp.numero_caso_beneficiario_patrocinador AS Nro_de_Caso
+FROM
+beneficiario AS b
+INNER JOIN beneficiario_patrocinador AS bp ON bp.fk_id_beneficiario = b.id_beneficiario
+WHERE
+b.id_beneficiario = 48.
+in /var/www/sisscsj/yii/protected/models/CTQ.php (282)
+in /var/www/sisscsj/yii/protected/controllers/Reporte/Reporte5.php (28)
+in /var/www/sisscsj/yii/index.php (18)
+2015/09/28 16:44:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sisscsj.beneficiario_patrocinador' doesn't exist. The SQL statement executed was: SELECT
+bp.numero_caso_beneficiario_patrocinador AS Nro_de_Caso
+FROM
+beneficiario AS b
+INNER JOIN beneficiario_patrocinador AS bp ON bp.fk_id_beneficiario = b.id_beneficiario
+WHERE
+b.id_beneficiario = 48' in /var/www/yii-framework/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/sisscsj/yii/protected/models/CTQ.php(282): CDbCommand->queryAll()
+#2 /var/www/sisscsj/yii/protected/controllers/Reporte/Reporte5.php(28): CTQ->consulta1_3_de_rep2('48')
+#3 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Reporte5->run()
+#4 /var/www/yii-framework/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#5 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(Reporte5))
+#6 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Reporte5), Array)
+#12 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('reporte5')
+#13 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('reporte/reporte...')
+#14 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#16 {main}
+REQUEST_URI=/sisscsj/yii/index.php/reporte/reporte5?start=0&limit=10&id=48&callback=Ext
+---
+2015/10/02 18:13:19 [error] [exception.CException] exception 'CException' with message 'La propiedad "HistoriaSocial"."situcion_actual_historia_social" no se encuentra definida.' in /var/www/yii-framework/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('situcion_actual...')
+#1 /var/www/sisscsj/yii/protected/controllers/HistoriaSocial/Read.php(76): CActiveRecord->__get('situcion_actual...')
+#2 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Read->run()
+#3 /var/www/yii-framework/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#4 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(Read))
+#5 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Read), Array)
+#11 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('')
+#12 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('historiaSocial')
+#13 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#14 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#15 {main}
+REQUEST_URI=/sisscsj/yii/index.php/historiaSocial?start=0&limit=10&callback=Ext
+---
+2015/10/05 10:57:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "miembroFramilia"' in /var/www/yii-framework/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('miembroFramilia')
+#1 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/sisscsj/yii/index.php/miembroFramilia?start=0&limit=10&callback=Ext
+---
+2015/10/05 10:57:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "miembroFamilia"' in /var/www/yii-framework/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('miembroFamilia')
+#1 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#3 {main}
+REQUEST_URI=/sisscsj/yii/index.php/miembroFamilia?start=0&limit=10&callback=Ext
+---
+2015/10/05 11:08:14 [error] [php] Invalid argument supplied for foreach() (/var/www/sisscsj/yii/protected/controllers/Sector/Read.php:30)
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): SectorController->runAction()
+#1 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/yii-framework/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): SectorController->filterAccessControl()
+#4 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii-framework/yii/framework/web/CController.php(265): SectorController->runActionWithFilters()
+#7 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): SectorController->run()
+#8 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/sisscsj/yii/index.php(18): CWebApplication->run()
+REQUEST_URI=/sisscsj/yii/index.php/Sector?_dc=1444057694740&query=&page=1&start=0&limit=25&callback=Ext.data.JsonP.callback180
+in /var/www/sisscsj/yii/protected/controllers/Sector/Read.php (30)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 11:08:46 [error] [php] Invalid argument supplied for foreach() (/var/www/sisscsj/yii/protected/controllers/Sector/Read.php:30)
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): SectorController->runAction()
+#1 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/yii-framework/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): SectorController->filterAccessControl()
+#4 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii-framework/yii/framework/web/CController.php(265): SectorController->runActionWithFilters()
+#7 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): SectorController->run()
+#8 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/sisscsj/yii/index.php(18): CWebApplication->run()
+REQUEST_URI=/sisscsj/yii/index.php/Sector?_dc=1444057726445&query=&page=1&start=0&limit=25&callback=Ext.data.JsonP.callback181
+in /var/www/sisscsj/yii/protected/controllers/Sector/Read.php (30)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 11:09:32 [error] [php] Invalid argument supplied for foreach() (/var/www/sisscsj/yii/protected/controllers/Sector/Read.php:30)
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): SectorController->runAction()
+#1 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/yii-framework/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): SectorController->filterAccessControl()
+#4 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii-framework/yii/framework/web/CController.php(265): SectorController->runActionWithFilters()
+#7 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): SectorController->run()
+#8 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/sisscsj/yii/index.php(18): CWebApplication->run()
+REQUEST_URI=/sisscsj/yii/index.php/Sector?_dc=1444057771824&query=&page=1&start=0&limit=25&callback=Ext.data.JsonP.callback182
+in /var/www/sisscsj/yii/protected/controllers/Sector/Read.php (30)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 11:13:00 [error] [php] Invalid argument supplied for foreach() (/var/www/sisscsj/yii/protected/controllers/Sector/Read.php:30)
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): SectorController->runAction()
+#1 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/yii-framework/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): SectorController->filterAccessControl()
+#4 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii-framework/yii/framework/web/CController.php(265): SectorController->runActionWithFilters()
+#7 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): SectorController->run()
+#8 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/sisscsj/yii/index.php(18): CWebApplication->run()
+REQUEST_URI=/sisscsj/yii/index.php/Sector?_dc=1444057980650&query=&page=1&start=0&limit=25&callback=Ext.data.JsonP.callback190
+in /var/www/sisscsj/yii/protected/controllers/Sector/Read.php (30)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 11:59:15 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii-framework/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Read), Array)
+#7 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('')
+#8 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('beneficiarioFam...')
+#9 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#11 {main}
+REQUEST_URI=/sisscsj/yii/index.php/beneficiarioFamilia/?start=0&limit=1&callback=Ext
+---
+2015/10/05 11:59:46 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /var/www/yii-framework/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Read), Array)
+#7 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('')
+#8 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('beneficiarioFam...')
+#9 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#11 {main}
+REQUEST_URI=/sisscsj/yii/index.php/beneficiarioFamilia/?start=0&limit=1&callback=Ext
+---
+2015/10/05 12:19:24 [error] [php] json_decode() expects parameter 1 to be string, array given (/var/www/yii-framework/yii/framework/web/helpers/CJSON.php:335)
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): MiembrosFamilia->run()
+#1 /var/www/yii-framework/yii/framework/web/CController.php(308): MiembrosFamilia->runWithParams()
+#2 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): BeneficiarioFamiliaController->runAction()
+#3 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /var/www/yii-framework/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): BeneficiarioFamiliaController->filterAccessControl()
+#6 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#8 /var/www/yii-framework/yii/framework/web/CController.php(265): BeneficiarioFamiliaController->runActionWithFilters()
+#9 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): BeneficiarioFamiliaController->run()
+#10 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /var/www/sisscsj/yii/index.php(18): CWebApplication->run()
+REQUEST_URI=/sisscsj/yii/index.php/beneficiarioFamilia/miembrosFamilia?filter[{%22property%22:fk_id_beneficiario,%22value%22:130}]&callback=Ext
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (24)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 12:19:35 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'bf.fk_id_familia' in 'IN/ALL/ANY subquery'. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia` AS `t0_c0`, `t`.`fk_id_beneficiario` AS `t0_c1`, `t`.`fk_id_familia` AS `t0_c2`, `t`.`fk_id_tipo_parentesco` AS `t0_c3`, `t`.`vive_casa_beneficiario_familia` AS `t0_c4`, `t`.`estado_beneficiario_familia` AS `t0_c5`, `t`.`fecha_creacion_beneficiario_familia` AS `t0_c6`, `t`.`responsable_beneficiario` AS `t0_c7`, `fkIdBeneficiario`.`id_beneficiario` AS `t1_c0`, `fkIdBeneficiario`.`fk_id_religion` AS `t1_c1`, `fkIdBeneficiario`.`fk_id_entidad_salud` AS `t1_c2`, `fkIdBeneficiario`.`fk_id_curso` AS `t1_c3`, `fkIdBeneficiario`.`fk_id_nivel` AS `t1_c4`, `fkIdBeneficiario`.`fk_id_turno` AS `t1_c5`, `fkIdBeneficiario`.`fk_id_formacion` AS `t1_c6`, `fkIdBeneficiario`.`codigo_beneficiario` AS `t1_c7`, `fkIdBeneficiario`.`primer_nombre_beneficiario` AS `t1_c8`, `fkIdBeneficiario`.`segundo_nombre_beneficiario` AS `t1_c9`, `fkIdBeneficiario`.`apellido_paterno_beneficiario` AS `t1_c10`, `fkIdBeneficiario`.`apellido_materno_beneficiario` AS `t1_c11`, `fkIdBeneficiario`.`fecha_nacimiento_beneficiario` AS `t1_c12`, `fkIdBeneficiario`.`sexo_beneficiario` AS `t1_c13`, `fkIdBeneficiario`.`numero_hijo_beneficiario` AS `t1_c14`, `fkIdBeneficiario`.`fotografia_beneficiario` AS `t1_c15`, `fkIdBeneficiario`.`observacion_beneficiario` AS `t1_c16`, `fkIdBeneficiario`.`trabaja_beneficiario` AS `t1_c17`, `fkIdBeneficiario`.`carnet_de_salud_beneficiario` AS `t1_c18`, `fkIdBeneficiario`.`libreta_escolar_beneficiario` AS `t1_c19`, `fkIdBeneficiario`.`informacion_relevante_beneficiario` AS `t1_c20`, `fkIdBeneficiario`.`fecha_creacion_beneficiario` AS `t1_c21`, `fkIdBeneficiario`.`numero_caso_beneficiario_patrocinador` AS `t1_c22`, `fkIdBeneficiario`.`numero_ninio_beneficiario_patrocinador` AS `t1_c23`, `fkIdBeneficiario`.`codigo_donante_beneficiario_patrocinador` AS `t1_c24`, `fkIdBeneficiario`.`nombre_patrocinador_beneficiario_patrocinador` AS `t1_c25`, `fkIdFamilia`.`id_familia` AS `t2_c0`, `fkIdFamilia`.`codigo_familia` AS `t2_c1`, `fkIdFamilia`.`codigo_familia_antiguo` AS `t2_c2`, `fkIdFamilia`.`numero_hijos_viven_familia` AS `t2_c3`, `fkIdFamilia`.`estado_familia` AS `t2_c4`, `fkIdFamilia`.`fecha_creacion_familia` AS `t2_c5`, `fkIdTipoParentesco`.`id_tipo_parentesco` AS `t3_c0`, `fkIdTipoParentesco`.`nombre_tipo_parentesco` AS `t3_c1`, `fkIdTipoParentesco`.`descripcion_tipo_parentesco` AS `t3_c2` FROM `beneficiario_familia` `t` INNER JOIN beneficiario AS b ON b.id_beneficiario = bf.fk_id_beneficiario
+INNER JOIN tipo_parentesco AS tp ON tp.id_tipo_parentesco = bf.fk_id_tipo_parentesco LEFT OUTER JOIN `beneficiario` `fkIdBeneficiario` ON (`t`.`fk_id_beneficiario`=`fkIdBeneficiario`.`id_beneficiario`)  LEFT OUTER JOIN `familia` `fkIdFamilia` ON (`t`.`fk_id_familia`=`fkIdFamilia`.`id_familia`) LEFT OUTER JOIN `tipo_parentesco` `fkIdTipoParentesco` ON (`t`.`fk_id_tipo_parentesco`=`fkIdTipoParentesco`.`id_tipo_parentesco`) WHERE (bf.fk_id_familia IN ((
+SELECT
+beneficiario_familia.fk_id_familia
+FROM
+beneficiario_familia
+WHERE beneficiario_familia.fk_id_beneficiario = 130)) AND
+b.id_beneficiario != 130).
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 12:20:48 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'bf.fk_id_familia' in 'IN/ALL/ANY subquery'. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia` AS `t0_c0`, `t`.`fk_id_beneficiario` AS `t0_c1`, `t`.`fk_id_familia` AS `t0_c2`, `t`.`fk_id_tipo_parentesco` AS `t0_c3`, `t`.`vive_casa_beneficiario_familia` AS `t0_c4`, `t`.`estado_beneficiario_familia` AS `t0_c5`, `t`.`fecha_creacion_beneficiario_familia` AS `t0_c6`, `t`.`responsable_beneficiario` AS `t0_c7`, `fkIdBeneficiario`.`id_beneficiario` AS `t1_c0`, `fkIdBeneficiario`.`fk_id_religion` AS `t1_c1`, `fkIdBeneficiario`.`fk_id_entidad_salud` AS `t1_c2`, `fkIdBeneficiario`.`fk_id_curso` AS `t1_c3`, `fkIdBeneficiario`.`fk_id_nivel` AS `t1_c4`, `fkIdBeneficiario`.`fk_id_turno` AS `t1_c5`, `fkIdBeneficiario`.`fk_id_formacion` AS `t1_c6`, `fkIdBeneficiario`.`codigo_beneficiario` AS `t1_c7`, `fkIdBeneficiario`.`primer_nombre_beneficiario` AS `t1_c8`, `fkIdBeneficiario`.`segundo_nombre_beneficiario` AS `t1_c9`, `fkIdBeneficiario`.`apellido_paterno_beneficiario` AS `t1_c10`, `fkIdBeneficiario`.`apellido_materno_beneficiario` AS `t1_c11`, `fkIdBeneficiario`.`fecha_nacimiento_beneficiario` AS `t1_c12`, `fkIdBeneficiario`.`sexo_beneficiario` AS `t1_c13`, `fkIdBeneficiario`.`numero_hijo_beneficiario` AS `t1_c14`, `fkIdBeneficiario`.`fotografia_beneficiario` AS `t1_c15`, `fkIdBeneficiario`.`observacion_beneficiario` AS `t1_c16`, `fkIdBeneficiario`.`trabaja_beneficiario` AS `t1_c17`, `fkIdBeneficiario`.`carnet_de_salud_beneficiario` AS `t1_c18`, `fkIdBeneficiario`.`libreta_escolar_beneficiario` AS `t1_c19`, `fkIdBeneficiario`.`informacion_relevante_beneficiario` AS `t1_c20`, `fkIdBeneficiario`.`fecha_creacion_beneficiario` AS `t1_c21`, `fkIdBeneficiario`.`numero_caso_beneficiario_patrocinador` AS `t1_c22`, `fkIdBeneficiario`.`numero_ninio_beneficiario_patrocinador` AS `t1_c23`, `fkIdBeneficiario`.`codigo_donante_beneficiario_patrocinador` AS `t1_c24`, `fkIdBeneficiario`.`nombre_patrocinador_beneficiario_patrocinador` AS `t1_c25`, `fkIdFamilia`.`id_familia` AS `t2_c0`, `fkIdFamilia`.`codigo_familia` AS `t2_c1`, `fkIdFamilia`.`codigo_familia_antiguo` AS `t2_c2`, `fkIdFamilia`.`numero_hijos_viven_familia` AS `t2_c3`, `fkIdFamilia`.`estado_familia` AS `t2_c4`, `fkIdFamilia`.`fecha_creacion_familia` AS `t2_c5`, `fkIdTipoParentesco`.`id_tipo_parentesco` AS `t3_c0`, `fkIdTipoParentesco`.`nombre_tipo_parentesco` AS `t3_c1`, `fkIdTipoParentesco`.`descripcion_tipo_parentesco` AS `t3_c2` FROM `beneficiario_familia` `t` INNER JOIN beneficiario AS b ON b.id_beneficiario = bf.fk_id_beneficiario
+INNER JOIN tipo_parentesco AS tp ON tp.id_tipo_parentesco = bf.fk_id_tipo_parentesco LEFT OUTER JOIN `beneficiario` `fkIdBeneficiario` ON (`t`.`fk_id_beneficiario`=`fkIdBeneficiario`.`id_beneficiario`)  LEFT OUTER JOIN `familia` `fkIdFamilia` ON (`t`.`fk_id_familia`=`fkIdFamilia`.`id_familia`) LEFT OUTER JOIN `tipo_parentesco` `fkIdTipoParentesco` ON (`t`.`fk_id_tipo_parentesco`=`fkIdTipoParentesco`.`id_tipo_parentesco`) WHERE (bf.fk_id_familia IN (
+SELECT
+beneficiario_familia.fk_id_familia
+FROM
+beneficiario_familia
+WHERE beneficiario_familia.fk_id_beneficiario = 130) AND
+b.id_beneficiario != 130).
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 12:21:00 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'bf.fk_id_familia' in 'IN/ALL/ANY subquery'. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia` AS `t0_c0`, `t`.`fk_id_beneficiario` AS `t0_c1`, `t`.`fk_id_familia` AS `t0_c2`, `t`.`fk_id_tipo_parentesco` AS `t0_c3`, `t`.`vive_casa_beneficiario_familia` AS `t0_c4`, `t`.`estado_beneficiario_familia` AS `t0_c5`, `t`.`fecha_creacion_beneficiario_familia` AS `t0_c6`, `t`.`responsable_beneficiario` AS `t0_c7`, `fkIdBeneficiario`.`id_beneficiario` AS `t1_c0`, `fkIdBeneficiario`.`fk_id_religion` AS `t1_c1`, `fkIdBeneficiario`.`fk_id_entidad_salud` AS `t1_c2`, `fkIdBeneficiario`.`fk_id_curso` AS `t1_c3`, `fkIdBeneficiario`.`fk_id_nivel` AS `t1_c4`, `fkIdBeneficiario`.`fk_id_turno` AS `t1_c5`, `fkIdBeneficiario`.`fk_id_formacion` AS `t1_c6`, `fkIdBeneficiario`.`codigo_beneficiario` AS `t1_c7`, `fkIdBeneficiario`.`primer_nombre_beneficiario` AS `t1_c8`, `fkIdBeneficiario`.`segundo_nombre_beneficiario` AS `t1_c9`, `fkIdBeneficiario`.`apellido_paterno_beneficiario` AS `t1_c10`, `fkIdBeneficiario`.`apellido_materno_beneficiario` AS `t1_c11`, `fkIdBeneficiario`.`fecha_nacimiento_beneficiario` AS `t1_c12`, `fkIdBeneficiario`.`sexo_beneficiario` AS `t1_c13`, `fkIdBeneficiario`.`numero_hijo_beneficiario` AS `t1_c14`, `fkIdBeneficiario`.`fotografia_beneficiario` AS `t1_c15`, `fkIdBeneficiario`.`observacion_beneficiario` AS `t1_c16`, `fkIdBeneficiario`.`trabaja_beneficiario` AS `t1_c17`, `fkIdBeneficiario`.`carnet_de_salud_beneficiario` AS `t1_c18`, `fkIdBeneficiario`.`libreta_escolar_beneficiario` AS `t1_c19`, `fkIdBeneficiario`.`informacion_relevante_beneficiario` AS `t1_c20`, `fkIdBeneficiario`.`fecha_creacion_beneficiario` AS `t1_c21`, `fkIdBeneficiario`.`numero_caso_beneficiario_patrocinador` AS `t1_c22`, `fkIdBeneficiario`.`numero_ninio_beneficiario_patrocinador` AS `t1_c23`, `fkIdBeneficiario`.`codigo_donante_beneficiario_patrocinador` AS `t1_c24`, `fkIdBeneficiario`.`nombre_patrocinador_beneficiario_patrocinador` AS `t1_c25`, `fkIdFamilia`.`id_familia` AS `t2_c0`, `fkIdFamilia`.`codigo_familia` AS `t2_c1`, `fkIdFamilia`.`codigo_familia_antiguo` AS `t2_c2`, `fkIdFamilia`.`numero_hijos_viven_familia` AS `t2_c3`, `fkIdFamilia`.`estado_familia` AS `t2_c4`, `fkIdFamilia`.`fecha_creacion_familia` AS `t2_c5`, `fkIdTipoParentesco`.`id_tipo_parentesco` AS `t3_c0`, `fkIdTipoParentesco`.`nombre_tipo_parentesco` AS `t3_c1`, `fkIdTipoParentesco`.`descripcion_tipo_parentesco` AS `t3_c2` FROM `beneficiario_familia` `t` INNER JOIN beneficiario AS b ON b.id_beneficiario = bf.fk_id_beneficiario
+INNER JOIN tipo_parentesco AS tp ON tp.id_tipo_parentesco = bf.fk_id_tipo_parentesco LEFT OUTER JOIN `beneficiario` `fkIdBeneficiario` ON (`t`.`fk_id_beneficiario`=`fkIdBeneficiario`.`id_beneficiario`)  LEFT OUTER JOIN `familia` `fkIdFamilia` ON (`t`.`fk_id_familia`=`fkIdFamilia`.`id_familia`) LEFT OUTER JOIN `tipo_parentesco` `fkIdTipoParentesco` ON (`t`.`fk_id_tipo_parentesco`=`fkIdTipoParentesco`.`id_tipo_parentesco`) WHERE (bf.fk_id_familia IN (
+SELECT
+beneficiario_familia.fk_id_familia
+FROM
+beneficiario_familia
+WHERE beneficiario_familia.fk_id_beneficiario = 130) AND
+b.id_beneficiario != 130).
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 12:21:26 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'bf.fk_id_familia' in 'IN/ALL/ANY subquery'. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia` AS `t0_c0`, `t`.`fk_id_beneficiario` AS `t0_c1`, `t`.`fk_id_familia` AS `t0_c2`, `t`.`fk_id_tipo_parentesco` AS `t0_c3`, `t`.`vive_casa_beneficiario_familia` AS `t0_c4`, `t`.`estado_beneficiario_familia` AS `t0_c5`, `t`.`fecha_creacion_beneficiario_familia` AS `t0_c6`, `t`.`responsable_beneficiario` AS `t0_c7`, `fkIdBeneficiario`.`id_beneficiario` AS `t1_c0`, `fkIdBeneficiario`.`fk_id_religion` AS `t1_c1`, `fkIdBeneficiario`.`fk_id_entidad_salud` AS `t1_c2`, `fkIdBeneficiario`.`fk_id_curso` AS `t1_c3`, `fkIdBeneficiario`.`fk_id_nivel` AS `t1_c4`, `fkIdBeneficiario`.`fk_id_turno` AS `t1_c5`, `fkIdBeneficiario`.`fk_id_formacion` AS `t1_c6`, `fkIdBeneficiario`.`codigo_beneficiario` AS `t1_c7`, `fkIdBeneficiario`.`primer_nombre_beneficiario` AS `t1_c8`, `fkIdBeneficiario`.`segundo_nombre_beneficiario` AS `t1_c9`, `fkIdBeneficiario`.`apellido_paterno_beneficiario` AS `t1_c10`, `fkIdBeneficiario`.`apellido_materno_beneficiario` AS `t1_c11`, `fkIdBeneficiario`.`fecha_nacimiento_beneficiario` AS `t1_c12`, `fkIdBeneficiario`.`sexo_beneficiario` AS `t1_c13`, `fkIdBeneficiario`.`numero_hijo_beneficiario` AS `t1_c14`, `fkIdBeneficiario`.`fotografia_beneficiario` AS `t1_c15`, `fkIdBeneficiario`.`observacion_beneficiario` AS `t1_c16`, `fkIdBeneficiario`.`trabaja_beneficiario` AS `t1_c17`, `fkIdBeneficiario`.`carnet_de_salud_beneficiario` AS `t1_c18`, `fkIdBeneficiario`.`libreta_escolar_beneficiario` AS `t1_c19`, `fkIdBeneficiario`.`informacion_relevante_beneficiario` AS `t1_c20`, `fkIdBeneficiario`.`fecha_creacion_beneficiario` AS `t1_c21`, `fkIdBeneficiario`.`numero_caso_beneficiario_patrocinador` AS `t1_c22`, `fkIdBeneficiario`.`numero_ninio_beneficiario_patrocinador` AS `t1_c23`, `fkIdBeneficiario`.`codigo_donante_beneficiario_patrocinador` AS `t1_c24`, `fkIdBeneficiario`.`nombre_patrocinador_beneficiario_patrocinador` AS `t1_c25`, `fkIdFamilia`.`id_familia` AS `t2_c0`, `fkIdFamilia`.`codigo_familia` AS `t2_c1`, `fkIdFamilia`.`codigo_familia_antiguo` AS `t2_c2`, `fkIdFamilia`.`numero_hijos_viven_familia` AS `t2_c3`, `fkIdFamilia`.`estado_familia` AS `t2_c4`, `fkIdFamilia`.`fecha_creacion_familia` AS `t2_c5`, `fkIdTipoParentesco`.`id_tipo_parentesco` AS `t3_c0`, `fkIdTipoParentesco`.`nombre_tipo_parentesco` AS `t3_c1`, `fkIdTipoParentesco`.`descripcion_tipo_parentesco` AS `t3_c2` FROM `beneficiario_familia` `t` INNER JOIN beneficiario AS b ON b.id_beneficiario = bf.fk_id_beneficiario
+INNER JOIN tipo_parentesco AS tp ON tp.id_tipo_parentesco = bf.fk_id_tipo_parentesco LEFT OUTER JOIN `beneficiario` `fkIdBeneficiario` ON (`t`.`fk_id_beneficiario`=`fkIdBeneficiario`.`id_beneficiario`)  LEFT OUTER JOIN `familia` `fkIdFamilia` ON (`t`.`fk_id_familia`=`fkIdFamilia`.`id_familia`) LEFT OUTER JOIN `tipo_parentesco` `fkIdTipoParentesco` ON (`t`.`fk_id_tipo_parentesco`=`fkIdTipoParentesco`.`id_tipo_parentesco`) WHERE (bf.fk_id_familia IN (
+SELECT
+beneficiario_familia.fk_id_familia
+FROM
+beneficiario_familia
+WHERE beneficiario_familia.fk_id_beneficiario = 130) AND
+b.id_beneficiario != 130).
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 12:22:39 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'bf.fk_id_familia' in 'IN/ALL/ANY subquery'. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia` AS `t0_c0`, `t`.`fk_id_beneficiario` AS `t0_c1`, `t`.`fk_id_familia` AS `t0_c2`, `t`.`fk_id_tipo_parentesco` AS `t0_c3`, `t`.`vive_casa_beneficiario_familia` AS `t0_c4`, `t`.`estado_beneficiario_familia` AS `t0_c5`, `t`.`fecha_creacion_beneficiario_familia` AS `t0_c6`, `t`.`responsable_beneficiario` AS `t0_c7`, `fkIdBeneficiario`.`id_beneficiario` AS `t1_c0`, `fkIdBeneficiario`.`fk_id_religion` AS `t1_c1`, `fkIdBeneficiario`.`fk_id_entidad_salud` AS `t1_c2`, `fkIdBeneficiario`.`fk_id_curso` AS `t1_c3`, `fkIdBeneficiario`.`fk_id_nivel` AS `t1_c4`, `fkIdBeneficiario`.`fk_id_turno` AS `t1_c5`, `fkIdBeneficiario`.`fk_id_formacion` AS `t1_c6`, `fkIdBeneficiario`.`codigo_beneficiario` AS `t1_c7`, `fkIdBeneficiario`.`primer_nombre_beneficiario` AS `t1_c8`, `fkIdBeneficiario`.`segundo_nombre_beneficiario` AS `t1_c9`, `fkIdBeneficiario`.`apellido_paterno_beneficiario` AS `t1_c10`, `fkIdBeneficiario`.`apellido_materno_beneficiario` AS `t1_c11`, `fkIdBeneficiario`.`fecha_nacimiento_beneficiario` AS `t1_c12`, `fkIdBeneficiario`.`sexo_beneficiario` AS `t1_c13`, `fkIdBeneficiario`.`numero_hijo_beneficiario` AS `t1_c14`, `fkIdBeneficiario`.`fotografia_beneficiario` AS `t1_c15`, `fkIdBeneficiario`.`observacion_beneficiario` AS `t1_c16`, `fkIdBeneficiario`.`trabaja_beneficiario` AS `t1_c17`, `fkIdBeneficiario`.`carnet_de_salud_beneficiario` AS `t1_c18`, `fkIdBeneficiario`.`libreta_escolar_beneficiario` AS `t1_c19`, `fkIdBeneficiario`.`informacion_relevante_beneficiario` AS `t1_c20`, `fkIdBeneficiario`.`fecha_creacion_beneficiario` AS `t1_c21`, `fkIdBeneficiario`.`numero_caso_beneficiario_patrocinador` AS `t1_c22`, `fkIdBeneficiario`.`numero_ninio_beneficiario_patrocinador` AS `t1_c23`, `fkIdBeneficiario`.`codigo_donante_beneficiario_patrocinador` AS `t1_c24`, `fkIdBeneficiario`.`nombre_patrocinador_beneficiario_patrocinador` AS `t1_c25`, `fkIdFamilia`.`id_familia` AS `t2_c0`, `fkIdFamilia`.`codigo_familia` AS `t2_c1`, `fkIdFamilia`.`codigo_familia_antiguo` AS `t2_c2`, `fkIdFamilia`.`numero_hijos_viven_familia` AS `t2_c3`, `fkIdFamilia`.`estado_familia` AS `t2_c4`, `fkIdFamilia`.`fecha_creacion_familia` AS `t2_c5`, `fkIdTipoParentesco`.`id_tipo_parentesco` AS `t3_c0`, `fkIdTipoParentesco`.`nombre_tipo_parentesco` AS `t3_c1`, `fkIdTipoParentesco`.`descripcion_tipo_parentesco` AS `t3_c2` FROM `beneficiario_familia` `t` INNER JOIN beneficiario AS b ON b.id_beneficiario = bf.fk_id_beneficiario
+INNER JOIN tipo_parentesco AS tp ON tp.id_tipo_parentesco = bf.fk_id_tipo_parentesco LEFT OUTER JOIN `beneficiario` `fkIdBeneficiario` ON (`t`.`fk_id_beneficiario`=`fkIdBeneficiario`.`id_beneficiario`)  LEFT OUTER JOIN `familia` `fkIdFamilia` ON (`t`.`fk_id_familia`=`fkIdFamilia`.`id_familia`) LEFT OUTER JOIN `tipo_parentesco` `fkIdTipoParentesco` ON (`t`.`fk_id_tipo_parentesco`=`fkIdTipoParentesco`.`id_tipo_parentesco`) WHERE (bf.fk_id_familia IN (
+SELECT
+bf.fk_id_familia
+FROM
+beneficiario_familia AS bf
+WHERE bf.fk_id_beneficiario = 130) AND
+b.id_beneficiario != 130).
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 12:22:44 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'bf.fk_id_familia' in 'IN/ALL/ANY subquery'. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia` AS `t0_c0`, `t`.`fk_id_beneficiario` AS `t0_c1`, `t`.`fk_id_familia` AS `t0_c2`, `t`.`fk_id_tipo_parentesco` AS `t0_c3`, `t`.`vive_casa_beneficiario_familia` AS `t0_c4`, `t`.`estado_beneficiario_familia` AS `t0_c5`, `t`.`fecha_creacion_beneficiario_familia` AS `t0_c6`, `t`.`responsable_beneficiario` AS `t0_c7`, `fkIdBeneficiario`.`id_beneficiario` AS `t1_c0`, `fkIdBeneficiario`.`fk_id_religion` AS `t1_c1`, `fkIdBeneficiario`.`fk_id_entidad_salud` AS `t1_c2`, `fkIdBeneficiario`.`fk_id_curso` AS `t1_c3`, `fkIdBeneficiario`.`fk_id_nivel` AS `t1_c4`, `fkIdBeneficiario`.`fk_id_turno` AS `t1_c5`, `fkIdBeneficiario`.`fk_id_formacion` AS `t1_c6`, `fkIdBeneficiario`.`codigo_beneficiario` AS `t1_c7`, `fkIdBeneficiario`.`primer_nombre_beneficiario` AS `t1_c8`, `fkIdBeneficiario`.`segundo_nombre_beneficiario` AS `t1_c9`, `fkIdBeneficiario`.`apellido_paterno_beneficiario` AS `t1_c10`, `fkIdBeneficiario`.`apellido_materno_beneficiario` AS `t1_c11`, `fkIdBeneficiario`.`fecha_nacimiento_beneficiario` AS `t1_c12`, `fkIdBeneficiario`.`sexo_beneficiario` AS `t1_c13`, `fkIdBeneficiario`.`numero_hijo_beneficiario` AS `t1_c14`, `fkIdBeneficiario`.`fotografia_beneficiario` AS `t1_c15`, `fkIdBeneficiario`.`observacion_beneficiario` AS `t1_c16`, `fkIdBeneficiario`.`trabaja_beneficiario` AS `t1_c17`, `fkIdBeneficiario`.`carnet_de_salud_beneficiario` AS `t1_c18`, `fkIdBeneficiario`.`libreta_escolar_beneficiario` AS `t1_c19`, `fkIdBeneficiario`.`informacion_relevante_beneficiario` AS `t1_c20`, `fkIdBeneficiario`.`fecha_creacion_beneficiario` AS `t1_c21`, `fkIdBeneficiario`.`numero_caso_beneficiario_patrocinador` AS `t1_c22`, `fkIdBeneficiario`.`numero_ninio_beneficiario_patrocinador` AS `t1_c23`, `fkIdBeneficiario`.`codigo_donante_beneficiario_patrocinador` AS `t1_c24`, `fkIdBeneficiario`.`nombre_patrocinador_beneficiario_patrocinador` AS `t1_c25`, `fkIdFamilia`.`id_familia` AS `t2_c0`, `fkIdFamilia`.`codigo_familia` AS `t2_c1`, `fkIdFamilia`.`codigo_familia_antiguo` AS `t2_c2`, `fkIdFamilia`.`numero_hijos_viven_familia` AS `t2_c3`, `fkIdFamilia`.`estado_familia` AS `t2_c4`, `fkIdFamilia`.`fecha_creacion_familia` AS `t2_c5`, `fkIdTipoParentesco`.`id_tipo_parentesco` AS `t3_c0`, `fkIdTipoParentesco`.`nombre_tipo_parentesco` AS `t3_c1`, `fkIdTipoParentesco`.`descripcion_tipo_parentesco` AS `t3_c2` FROM `beneficiario_familia` `t` INNER JOIN beneficiario AS b ON b.id_beneficiario = bf.fk_id_beneficiario
+INNER JOIN tipo_parentesco AS tp ON tp.id_tipo_parentesco = bf.fk_id_tipo_parentesco LEFT OUTER JOIN `beneficiario` `fkIdBeneficiario` ON (`t`.`fk_id_beneficiario`=`fkIdBeneficiario`.`id_beneficiario`)  LEFT OUTER JOIN `familia` `fkIdFamilia` ON (`t`.`fk_id_familia`=`fkIdFamilia`.`id_familia`) LEFT OUTER JOIN `tipo_parentesco` `fkIdTipoParentesco` ON (`t`.`fk_id_tipo_parentesco`=`fkIdTipoParentesco`.`id_tipo_parentesco`) WHERE (bf.fk_id_familia IN (
+SELECT
+bf.fk_id_familia
+FROM
+beneficiario_familia AS bf
+WHERE bf.fk_id_beneficiario = 130) AND
+b.id_beneficiario != 130).
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 12:23:46 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'bf.fk_id_familia' in 'IN/ALL/ANY subquery'. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia` AS `t0_c0`, `t`.`fk_id_beneficiario` AS `t0_c1`, `t`.`fk_id_familia` AS `t0_c2`, `t`.`fk_id_tipo_parentesco` AS `t0_c3`, `t`.`vive_casa_beneficiario_familia` AS `t0_c4`, `t`.`estado_beneficiario_familia` AS `t0_c5`, `t`.`fecha_creacion_beneficiario_familia` AS `t0_c6`, `t`.`responsable_beneficiario` AS `t0_c7`, `fkIdBeneficiario`.`id_beneficiario` AS `t1_c0`, `fkIdBeneficiario`.`fk_id_religion` AS `t1_c1`, `fkIdBeneficiario`.`fk_id_entidad_salud` AS `t1_c2`, `fkIdBeneficiario`.`fk_id_curso` AS `t1_c3`, `fkIdBeneficiario`.`fk_id_nivel` AS `t1_c4`, `fkIdBeneficiario`.`fk_id_turno` AS `t1_c5`, `fkIdBeneficiario`.`fk_id_formacion` AS `t1_c6`, `fkIdBeneficiario`.`codigo_beneficiario` AS `t1_c7`, `fkIdBeneficiario`.`primer_nombre_beneficiario` AS `t1_c8`, `fkIdBeneficiario`.`segundo_nombre_beneficiario` AS `t1_c9`, `fkIdBeneficiario`.`apellido_paterno_beneficiario` AS `t1_c10`, `fkIdBeneficiario`.`apellido_materno_beneficiario` AS `t1_c11`, `fkIdBeneficiario`.`fecha_nacimiento_beneficiario` AS `t1_c12`, `fkIdBeneficiario`.`sexo_beneficiario` AS `t1_c13`, `fkIdBeneficiario`.`numero_hijo_beneficiario` AS `t1_c14`, `fkIdBeneficiario`.`fotografia_beneficiario` AS `t1_c15`, `fkIdBeneficiario`.`observacion_beneficiario` AS `t1_c16`, `fkIdBeneficiario`.`trabaja_beneficiario` AS `t1_c17`, `fkIdBeneficiario`.`carnet_de_salud_beneficiario` AS `t1_c18`, `fkIdBeneficiario`.`libreta_escolar_beneficiario` AS `t1_c19`, `fkIdBeneficiario`.`informacion_relevante_beneficiario` AS `t1_c20`, `fkIdBeneficiario`.`fecha_creacion_beneficiario` AS `t1_c21`, `fkIdBeneficiario`.`numero_caso_beneficiario_patrocinador` AS `t1_c22`, `fkIdBeneficiario`.`numero_ninio_beneficiario_patrocinador` AS `t1_c23`, `fkIdBeneficiario`.`codigo_donante_beneficiario_patrocinador` AS `t1_c24`, `fkIdBeneficiario`.`nombre_patrocinador_beneficiario_patrocinador` AS `t1_c25`, `fkIdFamilia`.`id_familia` AS `t2_c0`, `fkIdFamilia`.`codigo_familia` AS `t2_c1`, `fkIdFamilia`.`codigo_familia_antiguo` AS `t2_c2`, `fkIdFamilia`.`numero_hijos_viven_familia` AS `t2_c3`, `fkIdFamilia`.`estado_familia` AS `t2_c4`, `fkIdFamilia`.`fecha_creacion_familia` AS `t2_c5`, `fkIdTipoParentesco`.`id_tipo_parentesco` AS `t3_c0`, `fkIdTipoParentesco`.`nombre_tipo_parentesco` AS `t3_c1`, `fkIdTipoParentesco`.`descripcion_tipo_parentesco` AS `t3_c2` FROM `beneficiario_familia` `t` INNER JOIN beneficiario AS b ON b.id_beneficiario = bf.fk_id_beneficiario
+INNER JOIN tipo_parentesco AS tp ON tp.id_tipo_parentesco = bf.fk_id_tipo_parentesco LEFT OUTER JOIN `beneficiario` `fkIdBeneficiario` ON (`t`.`fk_id_beneficiario`=`fkIdBeneficiario`.`id_beneficiario`)  LEFT OUTER JOIN `familia` `fkIdFamilia` ON (`t`.`fk_id_familia`=`fkIdFamilia`.`id_familia`) LEFT OUTER JOIN `tipo_parentesco` `fkIdTipoParentesco` ON (`t`.`fk_id_tipo_parentesco`=`fkIdTipoParentesco`.`id_tipo_parentesco`) WHERE (bf.fk_id_familia IN (
+SELECT
+bf.fk_id_familia
+FROM
+beneficiario_familia AS bf
+WHERE bf.fk_id_beneficiario = 130) AND
+b.id_beneficiario != 130).
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 12:23:49 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'bf.fk_id_familia' in 'IN/ALL/ANY subquery'. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia` AS `t0_c0`, `t`.`fk_id_beneficiario` AS `t0_c1`, `t`.`fk_id_familia` AS `t0_c2`, `t`.`fk_id_tipo_parentesco` AS `t0_c3`, `t`.`vive_casa_beneficiario_familia` AS `t0_c4`, `t`.`estado_beneficiario_familia` AS `t0_c5`, `t`.`fecha_creacion_beneficiario_familia` AS `t0_c6`, `t`.`responsable_beneficiario` AS `t0_c7`, `fkIdBeneficiario`.`id_beneficiario` AS `t1_c0`, `fkIdBeneficiario`.`fk_id_religion` AS `t1_c1`, `fkIdBeneficiario`.`fk_id_entidad_salud` AS `t1_c2`, `fkIdBeneficiario`.`fk_id_curso` AS `t1_c3`, `fkIdBeneficiario`.`fk_id_nivel` AS `t1_c4`, `fkIdBeneficiario`.`fk_id_turno` AS `t1_c5`, `fkIdBeneficiario`.`fk_id_formacion` AS `t1_c6`, `fkIdBeneficiario`.`codigo_beneficiario` AS `t1_c7`, `fkIdBeneficiario`.`primer_nombre_beneficiario` AS `t1_c8`, `fkIdBeneficiario`.`segundo_nombre_beneficiario` AS `t1_c9`, `fkIdBeneficiario`.`apellido_paterno_beneficiario` AS `t1_c10`, `fkIdBeneficiario`.`apellido_materno_beneficiario` AS `t1_c11`, `fkIdBeneficiario`.`fecha_nacimiento_beneficiario` AS `t1_c12`, `fkIdBeneficiario`.`sexo_beneficiario` AS `t1_c13`, `fkIdBeneficiario`.`numero_hijo_beneficiario` AS `t1_c14`, `fkIdBeneficiario`.`fotografia_beneficiario` AS `t1_c15`, `fkIdBeneficiario`.`observacion_beneficiario` AS `t1_c16`, `fkIdBeneficiario`.`trabaja_beneficiario` AS `t1_c17`, `fkIdBeneficiario`.`carnet_de_salud_beneficiario` AS `t1_c18`, `fkIdBeneficiario`.`libreta_escolar_beneficiario` AS `t1_c19`, `fkIdBeneficiario`.`informacion_relevante_beneficiario` AS `t1_c20`, `fkIdBeneficiario`.`fecha_creacion_beneficiario` AS `t1_c21`, `fkIdBeneficiario`.`numero_caso_beneficiario_patrocinador` AS `t1_c22`, `fkIdBeneficiario`.`numero_ninio_beneficiario_patrocinador` AS `t1_c23`, `fkIdBeneficiario`.`codigo_donante_beneficiario_patrocinador` AS `t1_c24`, `fkIdBeneficiario`.`nombre_patrocinador_beneficiario_patrocinador` AS `t1_c25`, `fkIdFamilia`.`id_familia` AS `t2_c0`, `fkIdFamilia`.`codigo_familia` AS `t2_c1`, `fkIdFamilia`.`codigo_familia_antiguo` AS `t2_c2`, `fkIdFamilia`.`numero_hijos_viven_familia` AS `t2_c3`, `fkIdFamilia`.`estado_familia` AS `t2_c4`, `fkIdFamilia`.`fecha_creacion_familia` AS `t2_c5`, `fkIdTipoParentesco`.`id_tipo_parentesco` AS `t3_c0`, `fkIdTipoParentesco`.`nombre_tipo_parentesco` AS `t3_c1`, `fkIdTipoParentesco`.`descripcion_tipo_parentesco` AS `t3_c2` FROM `beneficiario_familia` `t` INNER JOIN beneficiario AS b ON b.id_beneficiario = bf.fk_id_beneficiario
+INNER JOIN tipo_parentesco AS tp ON tp.id_tipo_parentesco = bf.fk_id_tipo_parentesco LEFT OUTER JOIN `beneficiario` `fkIdBeneficiario` ON (`t`.`fk_id_beneficiario`=`fkIdBeneficiario`.`id_beneficiario`)  LEFT OUTER JOIN `familia` `fkIdFamilia` ON (`t`.`fk_id_familia`=`fkIdFamilia`.`id_familia`) LEFT OUTER JOIN `tipo_parentesco` `fkIdTipoParentesco` ON (`t`.`fk_id_tipo_parentesco`=`fkIdTipoParentesco`.`id_tipo_parentesco`) WHERE (bf.fk_id_familia IN (
+SELECT
+bf.fk_id_familia
+FROM
+beneficiario_familia AS bf
+WHERE bf.fk_id_beneficiario = 130) AND
+b.id_beneficiario != 130).
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 12:24:31 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'bf.fk_id_familia' in 'IN/ALL/ANY subquery'. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia`, `t`.`fk_id_beneficiario`, `t`.`fk_id_familia`, `t`.`fk_id_tipo_parentesco`, `t`.`vive_casa_beneficiario_familia`, `t`.`estado_beneficiario_familia`, `t`.`fecha_creacion_beneficiario_familia`, `t`.`responsable_beneficiario` FROM `beneficiario_familia` `t` INNER JOIN beneficiario AS b ON b.id_beneficiario = bf.fk_id_beneficiario
+INNER JOIN tipo_parentesco AS tp ON tp.id_tipo_parentesco = bf.fk_id_tipo_parentesco WHERE bf.fk_id_familia IN (
+SELECT
+bf.fk_id_familia
+FROM
+beneficiario_familia AS bf
+WHERE bf.fk_id_beneficiario = 130) AND
+b.id_beneficiario != 130.
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 12:24:34 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'bf.fk_id_familia' in 'IN/ALL/ANY subquery'. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia`, `t`.`fk_id_beneficiario`, `t`.`fk_id_familia`, `t`.`fk_id_tipo_parentesco`, `t`.`vive_casa_beneficiario_familia`, `t`.`estado_beneficiario_familia`, `t`.`fecha_creacion_beneficiario_familia`, `t`.`responsable_beneficiario` FROM `beneficiario_familia` `t` INNER JOIN beneficiario AS b ON b.id_beneficiario = bf.fk_id_beneficiario
+INNER JOIN tipo_parentesco AS tp ON tp.id_tipo_parentesco = bf.fk_id_tipo_parentesco WHERE bf.fk_id_familia IN (
+SELECT
+bf.fk_id_familia
+FROM
+beneficiario_familia AS bf
+WHERE bf.fk_id_beneficiario = 130) AND
+b.id_beneficiario != 130.
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 12:26:41 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ALL (
+SELECT
+bf.fk_id_familia
+FROM
+beneficiario_familia AS bf
+WHERE bf.fk_i' at line 2. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia`, `t`.`fk_id_beneficiario`, `t`.`fk_id_familia`, `t`.`fk_id_tipo_parentesco`, `t`.`vive_casa_beneficiario_familia`, `t`.`estado_beneficiario_familia`, `t`.`fecha_creacion_beneficiario_familia`, `t`.`responsable_beneficiario` FROM `beneficiario_familia` `t` INNER JOIN beneficiario AS b ON b.id_beneficiario = bf.fk_id_beneficiario
+INNER JOIN tipo_parentesco AS tp ON tp.id_tipo_parentesco = bf.fk_id_tipo_parentesco WHERE bf.fk_id_familia ALL (
+SELECT
+bf.fk_id_familia
+FROM
+beneficiario_familia AS bf
+WHERE bf.fk_id_beneficiario = 130) AND
+b.id_beneficiario != 130.
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 12:26:58 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ON (
+SELECT
+bf.fk_id_familia
+FROM
+beneficiario_familia AS bf
+WHERE bf.fk_id' at line 2. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia`, `t`.`fk_id_beneficiario`, `t`.`fk_id_familia`, `t`.`fk_id_tipo_parentesco`, `t`.`vive_casa_beneficiario_familia`, `t`.`estado_beneficiario_familia`, `t`.`fecha_creacion_beneficiario_familia`, `t`.`responsable_beneficiario` FROM `beneficiario_familia` `t` INNER JOIN beneficiario AS b ON b.id_beneficiario = bf.fk_id_beneficiario
+INNER JOIN tipo_parentesco AS tp ON tp.id_tipo_parentesco = bf.fk_id_tipo_parentesco WHERE bf.fk_id_familia ON (
+SELECT
+bf.fk_id_familia
+FROM
+beneficiario_familia AS bf
+WHERE bf.fk_id_beneficiario = 130) AND
+b.id_beneficiario != 130.
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 12:27:08 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'bf.fk_id_familia' in 'IN/ALL/ANY subquery'. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia`, `t`.`fk_id_beneficiario`, `t`.`fk_id_familia`, `t`.`fk_id_tipo_parentesco`, `t`.`vive_casa_beneficiario_familia`, `t`.`estado_beneficiario_familia`, `t`.`fecha_creacion_beneficiario_familia`, `t`.`responsable_beneficiario` FROM `beneficiario_familia` `t` INNER JOIN beneficiario AS b ON b.id_beneficiario = bf.fk_id_beneficiario
+INNER JOIN tipo_parentesco AS tp ON tp.id_tipo_parentesco = bf.fk_id_tipo_parentesco WHERE bf.fk_id_familia IN (
+SELECT
+bf.fk_id_familia
+FROM
+beneficiario_familia AS bf
+WHERE bf.fk_id_beneficiario = 130) AND
+b.id_beneficiario != 130.
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 12:27:21 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ANY (
+SELECT
+bf.fk_id_familia
+FROM
+beneficiario_familia AS bf
+WHERE bf.fk_i' at line 2. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia`, `t`.`fk_id_beneficiario`, `t`.`fk_id_familia`, `t`.`fk_id_tipo_parentesco`, `t`.`vive_casa_beneficiario_familia`, `t`.`estado_beneficiario_familia`, `t`.`fecha_creacion_beneficiario_familia`, `t`.`responsable_beneficiario` FROM `beneficiario_familia` `t` INNER JOIN beneficiario AS b ON b.id_beneficiario = bf.fk_id_beneficiario
+INNER JOIN tipo_parentesco AS tp ON tp.id_tipo_parentesco = bf.fk_id_tipo_parentesco WHERE bf.fk_id_familia ANY (
+SELECT
+bf.fk_id_familia
+FROM
+beneficiario_familia AS bf
+WHERE bf.fk_id_beneficiario = 130) AND
+b.id_beneficiario != 130.
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 12:27:30 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'bf.fk_id_familia' in 'IN/ALL/ANY subquery'. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia`, `t`.`fk_id_beneficiario`, `t`.`fk_id_familia`, `t`.`fk_id_tipo_parentesco`, `t`.`vive_casa_beneficiario_familia`, `t`.`estado_beneficiario_familia`, `t`.`fecha_creacion_beneficiario_familia`, `t`.`responsable_beneficiario` FROM `beneficiario_familia` `t` INNER JOIN beneficiario AS b ON b.id_beneficiario = bf.fk_id_beneficiario
+INNER JOIN tipo_parentesco AS tp ON tp.id_tipo_parentesco = bf.fk_id_tipo_parentesco WHERE bf.fk_id_familia IN (
+SELECT
+bf.fk_id_familia
+FROM
+beneficiario_familia AS bf
+WHERE bf.fk_id_beneficiario = 130) AND
+b.id_beneficiario != 130.
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 12:28:35 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'beneficiario_famliafk_id_familia' in 'IN/ALL/ANY subquery'. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia`, `t`.`fk_id_beneficiario`, `t`.`fk_id_familia`, `t`.`fk_id_tipo_parentesco`, `t`.`vive_casa_beneficiario_familia`, `t`.`estado_beneficiario_familia`, `t`.`fecha_creacion_beneficiario_familia`, `t`.`responsable_beneficiario` FROM `beneficiario_familia` `t` INNER JOIN beneficiario AS b ON b.id_beneficiario = bf.fk_id_beneficiario
+INNER JOIN tipo_parentesco AS tp ON tp.id_tipo_parentesco = bf.fk_id_tipo_parentesco WHERE beneficiario_famliafk_id_familia IN (
+SELECT
+bf.fk_id_familia
+FROM
+beneficiario_familia AS bf
+WHERE bf.fk_id_beneficiario = 130) AND
+b.id_beneficiario != 130.
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 12:28:43 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'beneficiario_famlia.fk_id_familia' in 'IN/ALL/ANY subquery'. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia`, `t`.`fk_id_beneficiario`, `t`.`fk_id_familia`, `t`.`fk_id_tipo_parentesco`, `t`.`vive_casa_beneficiario_familia`, `t`.`estado_beneficiario_familia`, `t`.`fecha_creacion_beneficiario_familia`, `t`.`responsable_beneficiario` FROM `beneficiario_familia` `t` INNER JOIN beneficiario AS b ON b.id_beneficiario = bf.fk_id_beneficiario
+INNER JOIN tipo_parentesco AS tp ON tp.id_tipo_parentesco = bf.fk_id_tipo_parentesco WHERE beneficiario_famlia.fk_id_familia IN (
+SELECT
+bf.fk_id_familia
+FROM
+beneficiario_familia AS bf
+WHERE bf.fk_id_beneficiario = 130) AND
+b.id_beneficiario != 130.
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 12:29:01 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'bf.fk_id_familia' in 'IN/ALL/ANY subquery'. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia`, `t`.`fk_id_beneficiario`, `t`.`fk_id_familia`, `t`.`fk_id_tipo_parentesco`, `t`.`vive_casa_beneficiario_familia`, `t`.`estado_beneficiario_familia`, `t`.`fecha_creacion_beneficiario_familia`, `t`.`responsable_beneficiario` FROM `beneficiario_familia` `t` INNER JOIN beneficiario AS b ON b.id_beneficiario = bf.fk_id_beneficiario
+INNER JOIN tipo_parentesco AS tp ON tp.id_tipo_parentesco = bf.fk_id_tipo_parentesco WHERE bf.fk_id_familia IN (
+SELECT
+bf.fk_id_familia
+FROM
+beneficiario_familia AS bf
+WHERE bf.fk_id_beneficiario = 130) AND
+b.id_beneficiario != 130.
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 12:29:54 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'bf.fk_id_beneficiario' in 'on clause'. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia`, `t`.`fk_id_beneficiario`, `t`.`fk_id_familia`, `t`.`fk_id_tipo_parentesco`, `t`.`vive_casa_beneficiario_familia`, `t`.`estado_beneficiario_familia`, `t`.`fecha_creacion_beneficiario_familia`, `t`.`responsable_beneficiario` FROM `beneficiario_familia` `t` INNER JOIN beneficiario AS b ON b.id_beneficiario = bf.fk_id_beneficiario
+INNER JOIN tipo_parentesco AS tp ON tp.id_tipo_parentesco = bf.fk_id_tipo_parentesco WHERE fk_id_familia IN (
+SELECT
+bf.fk_id_familia
+FROM
+beneficiario_familia AS bf
+WHERE bf.fk_id_beneficiario = 130) AND
+b.id_beneficiario != 130.
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 12:31:11 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'bfff.fk_id_beneficiario' in 'where clause'. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia`, `t`.`fk_id_beneficiario`, `t`.`fk_id_familia`, `t`.`fk_id_tipo_parentesco`, `t`.`vive_casa_beneficiario_familia`, `t`.`estado_beneficiario_familia`, `t`.`fecha_creacion_beneficiario_familia`, `t`.`responsable_beneficiario` FROM `beneficiario_familia` `t` INNER JOIN beneficiario AS b ON b.id_beneficiario = bf.fk_id_beneficiario
+INNER JOIN tipo_parentesco AS tp ON tp.id_tipo_parentesco = bf.fk_id_tipo_parentesco WHERE fk_id_familia IN (
+SELECT
+bf.fk_id_familia
+FROM
+beneficiario_familia AS bf
+WHERE bfff.fk_id_beneficiario = 130) AND
+b.id_beneficiario != 130.
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 12:31:42 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE fk_id_beneficiario = 130) AND
+b.id_beneficiario != 130' at line 7. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia`, `t`.`fk_id_beneficiario`, `t`.`fk_id_familia`, `t`.`fk_id_tipo_parentesco`, `t`.`vive_casa_beneficiario_familia`, `t`.`estado_beneficiario_familia`, `t`.`fecha_creacion_beneficiario_familia`, `t`.`responsable_beneficiario` FROM `beneficiario_familia` `t` INNER JOIN beneficiario AS b ON b.id_beneficiario = bf.fk_id_beneficiario
+INNER JOIN tipo_parentesco AS tp ON tp.id_tipo_parentesco = bf.fk_id_tipo_parentesco WHERE fk_id_familia IN (
+SELECT
+bf.fk_id_familia
+FROM
+beneficiario_familia AS 
+WHERE fk_id_beneficiario = 130) AND
+b.id_beneficiario != 130.
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 12:31:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "HistoriaSocial" solicitada.' in /var/www/yii-framework/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/web/CController.php(270): CController->missingAction('HistoriaSocial')
+#1 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('HistoriaSocial')
+#2 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('beneficiario/Hi...')
+#3 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/sisscsj/yii/index.php/beneficiario/HistoriaSocial?fk_id_beneficiario=1&estado_historia_social=1&_dc=1444062721821&callback=Ext.data.JsonP.callback130
+HTTP_REFERER=http://localhost/sisscsj/index.html
+---
+2015/10/05 12:32:04 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'bf.fk_id_familia' in 'field list'. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia`, `t`.`fk_id_beneficiario`, `t`.`fk_id_familia`, `t`.`fk_id_tipo_parentesco`, `t`.`vive_casa_beneficiario_familia`, `t`.`estado_beneficiario_familia`, `t`.`fecha_creacion_beneficiario_familia`, `t`.`responsable_beneficiario` FROM `beneficiario_familia` `t` INNER JOIN beneficiario AS b ON b.id_beneficiario = bf.fk_id_beneficiario
+INNER JOIN tipo_parentesco AS tp ON tp.id_tipo_parentesco = bf.fk_id_tipo_parentesco WHERE fk_id_familia IN (
+SELECT
+bf.fk_id_familia
+FROM
+beneficiario_familia 
+WHERE fk_id_beneficiario = 130) AND
+b.id_beneficiario != 130.
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 12:32:18 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'bf.fk_id_beneficiario' in 'on clause'. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia`, `t`.`fk_id_beneficiario`, `t`.`fk_id_familia`, `t`.`fk_id_tipo_parentesco`, `t`.`vive_casa_beneficiario_familia`, `t`.`estado_beneficiario_familia`, `t`.`fecha_creacion_beneficiario_familia`, `t`.`responsable_beneficiario` FROM `beneficiario_familia` `t` INNER JOIN beneficiario AS b ON b.id_beneficiario = bf.fk_id_beneficiario
+INNER JOIN tipo_parentesco AS tp ON tp.id_tipo_parentesco = bf.fk_id_tipo_parentesco WHERE fk_id_familia IN (
+SELECT
+fk_id_familia
+FROM
+beneficiario_familia 
+WHERE fk_id_beneficiario = 130) AND
+b.id_beneficiario != 130.
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 12:32:41 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'bf.fk_id_tipo_parentesco' in 'on clause'. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia`, `t`.`fk_id_beneficiario`, `t`.`fk_id_familia`, `t`.`fk_id_tipo_parentesco`, `t`.`vive_casa_beneficiario_familia`, `t`.`estado_beneficiario_familia`, `t`.`fecha_creacion_beneficiario_familia`, `t`.`responsable_beneficiario` FROM `beneficiario_familia` `t` INNER JOIN beneficiario AS b ON b.id_beneficiario = t.fk_id_beneficiario
+INNER JOIN tipo_parentesco AS tp ON tp.id_tipo_parentesco = bf.fk_id_tipo_parentesco WHERE fk_id_familia IN (
+SELECT
+fk_id_familia
+FROM
+beneficiario_familia 
+WHERE fk_id_beneficiario = 130) AND
+b.id_beneficiario != 130.
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 12:38:01 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fk_id_beneficiari' in 'where clause'. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia`, `t`.`fk_id_beneficiario`, `t`.`fk_id_familia`, `t`.`fk_id_tipo_parentesco`, `t`.`vive_casa_beneficiario_familia`, `t`.`estado_beneficiario_familia`, `t`.`fecha_creacion_beneficiario_familia`, `t`.`responsable_beneficiario` FROM `beneficiario_familia` `t` INNER JOIN beneficiario AS b ON b.id_beneficiario = t.fk_id_beneficiario
+INNER JOIN tipo_parentesco AS tp ON tp.id_tipo_parentesco = t.fk_id_tipo_parentesco WHERE fk_id_familia IN (
+SELECT
+fk_id_familia
+FROM
+beneficiario_familia 
+WHERE fk_id_beneficiari = 130) AND
+b.id_beneficiario != 130.
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/MiembrosFamilia.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 13:18:08 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 100' at line 1. La sentencia SQL ejecutada fue: SELECT `t`.`id_historia_social` AS `t0_c0`, `t`.`fk_id_beneficiario` AS `t0_c1`, `t`.`historia_social` AS `t0_c2`, `t`.`dinamica_familiar_historia_social` AS `t0_c3`, `t`.`situacion_actual_historia_social` AS `t0_c4`, `t`.`estado_historia_social` AS `t0_c5`, `fkIdBeneficiario`.`id_beneficiario` AS `t1_c0`, `fkIdBeneficiario`.`fk_id_religion` AS `t1_c1`, `fkIdBeneficiario`.`fk_id_entidad_salud` AS `t1_c2`, `fkIdBeneficiario`.`fk_id_curso` AS `t1_c3`, `fkIdBeneficiario`.`fk_id_nivel` AS `t1_c4`, `fkIdBeneficiario`.`fk_id_turno` AS `t1_c5`, `fkIdBeneficiario`.`fk_id_formacion` AS `t1_c6`, `fkIdBeneficiario`.`codigo_beneficiario` AS `t1_c7`, `fkIdBeneficiario`.`primer_nombre_beneficiario` AS `t1_c8`, `fkIdBeneficiario`.`segundo_nombre_beneficiario` AS `t1_c9`, `fkIdBeneficiario`.`apellido_paterno_beneficiario` AS `t1_c10`, `fkIdBeneficiario`.`apellido_materno_beneficiario` AS `t1_c11`, `fkIdBeneficiario`.`fecha_nacimiento_beneficiario` AS `t1_c12`, `fkIdBeneficiario`.`sexo_beneficiario` AS `t1_c13`, `fkIdBeneficiario`.`numero_hijo_beneficiario` AS `t1_c14`, `fkIdBeneficiario`.`fotografia_beneficiario` AS `t1_c15`, `fkIdBeneficiario`.`observacion_beneficiario` AS `t1_c16`, `fkIdBeneficiario`.`trabaja_beneficiario` AS `t1_c17`, `fkIdBeneficiario`.`carnet_de_salud_beneficiario` AS `t1_c18`, `fkIdBeneficiario`.`libreta_escolar_beneficiario` AS `t1_c19`, `fkIdBeneficiario`.`informacion_relevante_beneficiario` AS `t1_c20`, `fkIdBeneficiario`.`fecha_creacion_beneficiario` AS `t1_c21`, `fkIdBeneficiario`.`numero_caso_beneficiario_patrocinador` AS `t1_c22`, `fkIdBeneficiario`.`numero_ninio_beneficiario_patrocinador` AS `t1_c23`, `fkIdBeneficiario`.`codigo_donante_beneficiario_patrocinador` AS `t1_c24`, `fkIdBeneficiario`.`nombre_patrocinador_beneficiario_patrocinador` AS `t1_c25` FROM `historia_social` `t`  LEFT OUTER JOIN `beneficiario` `fkIdBeneficiario` ON (`t`.`fk_id_beneficiario`=`fkIdBeneficiario`.`id_beneficiario`) WHERE (fk_id_beneficiario = 2 AND estado_historia_social = 1 AND ) LIMIT 100.
+in /var/www/sisscsj/yii/protected/controllers/HistoriaSocial/Read.php (54)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 13:19:13 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1. La sentencia SQL ejecutada fue: SELECT `t`.`id_historia_social` AS `t0_c0`, `t`.`fk_id_beneficiario` AS `t0_c1`, `t`.`historia_social` AS `t0_c2`, `t`.`dinamica_familiar_historia_social` AS `t0_c3`, `t`.`situacion_actual_historia_social` AS `t0_c4`, `t`.`estado_historia_social` AS `t0_c5`, `fkIdBeneficiario`.`id_beneficiario` AS `t1_c0`, `fkIdBeneficiario`.`fk_id_religion` AS `t1_c1`, `fkIdBeneficiario`.`fk_id_entidad_salud` AS `t1_c2`, `fkIdBeneficiario`.`fk_id_curso` AS `t1_c3`, `fkIdBeneficiario`.`fk_id_nivel` AS `t1_c4`, `fkIdBeneficiario`.`fk_id_turno` AS `t1_c5`, `fkIdBeneficiario`.`fk_id_formacion` AS `t1_c6`, `fkIdBeneficiario`.`codigo_beneficiario` AS `t1_c7`, `fkIdBeneficiario`.`primer_nombre_beneficiario` AS `t1_c8`, `fkIdBeneficiario`.`segundo_nombre_beneficiario` AS `t1_c9`, `fkIdBeneficiario`.`apellido_paterno_beneficiario` AS `t1_c10`, `fkIdBeneficiario`.`apellido_materno_beneficiario` AS `t1_c11`, `fkIdBeneficiario`.`fecha_nacimiento_beneficiario` AS `t1_c12`, `fkIdBeneficiario`.`sexo_beneficiario` AS `t1_c13`, `fkIdBeneficiario`.`numero_hijo_beneficiario` AS `t1_c14`, `fkIdBeneficiario`.`fotografia_beneficiario` AS `t1_c15`, `fkIdBeneficiario`.`observacion_beneficiario` AS `t1_c16`, `fkIdBeneficiario`.`trabaja_beneficiario` AS `t1_c17`, `fkIdBeneficiario`.`carnet_de_salud_beneficiario` AS `t1_c18`, `fkIdBeneficiario`.`libreta_escolar_beneficiario` AS `t1_c19`, `fkIdBeneficiario`.`informacion_relevante_beneficiario` AS `t1_c20`, `fkIdBeneficiario`.`fecha_creacion_beneficiario` AS `t1_c21`, `fkIdBeneficiario`.`numero_caso_beneficiario_patrocinador` AS `t1_c22`, `fkIdBeneficiario`.`numero_ninio_beneficiario_patrocinador` AS `t1_c23`, `fkIdBeneficiario`.`codigo_donante_beneficiario_patrocinador` AS `t1_c24`, `fkIdBeneficiario`.`nombre_patrocinador_beneficiario_patrocinador` AS `t1_c25` FROM `historia_social` `t`  LEFT OUTER JOIN `beneficiario` `fkIdBeneficiario` ON (`t`.`fk_id_beneficiario`=`fkIdBeneficiario`.`id_beneficiario`) WHERE (fk_id_beneficiario = 2 AND estado_historia_social = 1 AND ).
+in /var/www/sisscsj/yii/protected/controllers/HistoriaSocial/Read.php (54)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 13:20:14 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1. La sentencia SQL ejecutada fue: SELECT `t`.`id_historia_social` AS `t0_c0`, `t`.`fk_id_beneficiario` AS `t0_c1`, `t`.`historia_social` AS `t0_c2`, `t`.`dinamica_familiar_historia_social` AS `t0_c3`, `t`.`situacion_actual_historia_social` AS `t0_c4`, `t`.`estado_historia_social` AS `t0_c5`, `fkIdBeneficiario`.`id_beneficiario` AS `t1_c0`, `fkIdBeneficiario`.`fk_id_religion` AS `t1_c1`, `fkIdBeneficiario`.`fk_id_entidad_salud` AS `t1_c2`, `fkIdBeneficiario`.`fk_id_curso` AS `t1_c3`, `fkIdBeneficiario`.`fk_id_nivel` AS `t1_c4`, `fkIdBeneficiario`.`fk_id_turno` AS `t1_c5`, `fkIdBeneficiario`.`fk_id_formacion` AS `t1_c6`, `fkIdBeneficiario`.`codigo_beneficiario` AS `t1_c7`, `fkIdBeneficiario`.`primer_nombre_beneficiario` AS `t1_c8`, `fkIdBeneficiario`.`segundo_nombre_beneficiario` AS `t1_c9`, `fkIdBeneficiario`.`apellido_paterno_beneficiario` AS `t1_c10`, `fkIdBeneficiario`.`apellido_materno_beneficiario` AS `t1_c11`, `fkIdBeneficiario`.`fecha_nacimiento_beneficiario` AS `t1_c12`, `fkIdBeneficiario`.`sexo_beneficiario` AS `t1_c13`, `fkIdBeneficiario`.`numero_hijo_beneficiario` AS `t1_c14`, `fkIdBeneficiario`.`fotografia_beneficiario` AS `t1_c15`, `fkIdBeneficiario`.`observacion_beneficiario` AS `t1_c16`, `fkIdBeneficiario`.`trabaja_beneficiario` AS `t1_c17`, `fkIdBeneficiario`.`carnet_de_salud_beneficiario` AS `t1_c18`, `fkIdBeneficiario`.`libreta_escolar_beneficiario` AS `t1_c19`, `fkIdBeneficiario`.`informacion_relevante_beneficiario` AS `t1_c20`, `fkIdBeneficiario`.`fecha_creacion_beneficiario` AS `t1_c21`, `fkIdBeneficiario`.`numero_caso_beneficiario_patrocinador` AS `t1_c22`, `fkIdBeneficiario`.`numero_ninio_beneficiario_patrocinador` AS `t1_c23`, `fkIdBeneficiario`.`codigo_donante_beneficiario_patrocinador` AS `t1_c24`, `fkIdBeneficiario`.`nombre_patrocinador_beneficiario_patrocinador` AS `t1_c25` FROM `historia_social` `t`  LEFT OUTER JOIN `beneficiario` `fkIdBeneficiario` ON (`t`.`fk_id_beneficiario`=`fkIdBeneficiario`.`id_beneficiario`) WHERE (fk_id_beneficiario = 2 AND estado_historia_social = 1 AND ).
+in /var/www/sisscsj/yii/protected/controllers/HistoriaSocial/Read.php (54)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 15:21:40 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%1%) LIMIT 1' at line 1. La sentencia SQL ejecutada fue: SELECT `t`.`id_historia_social` AS `t0_c0`, `t`.`fk_id_beneficiario` AS `t0_c1`, `t`.`historia_social` AS `t0_c2`, `t`.`dinamica_familiar_historia_social` AS `t0_c3`, `t`.`situacion_actual_historia_social` AS `t0_c4`, `t`.`estado_historia_social` AS `t0_c5`, `fkIdBeneficiario`.`id_beneficiario` AS `t1_c0`, `fkIdBeneficiario`.`fk_id_religion` AS `t1_c1`, `fkIdBeneficiario`.`fk_id_entidad_salud` AS `t1_c2`, `fkIdBeneficiario`.`fk_id_curso` AS `t1_c3`, `fkIdBeneficiario`.`fk_id_nivel` AS `t1_c4`, `fkIdBeneficiario`.`fk_id_turno` AS `t1_c5`, `fkIdBeneficiario`.`fk_id_formacion` AS `t1_c6`, `fkIdBeneficiario`.`codigo_beneficiario` AS `t1_c7`, `fkIdBeneficiario`.`primer_nombre_beneficiario` AS `t1_c8`, `fkIdBeneficiario`.`segundo_nombre_beneficiario` AS `t1_c9`, `fkIdBeneficiario`.`apellido_paterno_beneficiario` AS `t1_c10`, `fkIdBeneficiario`.`apellido_materno_beneficiario` AS `t1_c11`, `fkIdBeneficiario`.`fecha_nacimiento_beneficiario` AS `t1_c12`, `fkIdBeneficiario`.`sexo_beneficiario` AS `t1_c13`, `fkIdBeneficiario`.`numero_hijo_beneficiario` AS `t1_c14`, `fkIdBeneficiario`.`fotografia_beneficiario` AS `t1_c15`, `fkIdBeneficiario`.`observacion_beneficiario` AS `t1_c16`, `fkIdBeneficiario`.`trabaja_beneficiario` AS `t1_c17`, `fkIdBeneficiario`.`carnet_de_salud_beneficiario` AS `t1_c18`, `fkIdBeneficiario`.`libreta_escolar_beneficiario` AS `t1_c19`, `fkIdBeneficiario`.`informacion_relevante_beneficiario` AS `t1_c20`, `fkIdBeneficiario`.`fecha_creacion_beneficiario` AS `t1_c21`, `fkIdBeneficiario`.`numero_caso_beneficiario_patrocinador` AS `t1_c22`, `fkIdBeneficiario`.`numero_ninio_beneficiario_patrocinador` AS `t1_c23`, `fkIdBeneficiario`.`codigo_donante_beneficiario_patrocinador` AS `t1_c24`, `fkIdBeneficiario`.`nombre_patrocinador_beneficiario_patrocinador` AS `t1_c25` FROM `historia_social` `t`  LEFT OUTER JOIN `beneficiario` `fkIdBeneficiario` ON (`t`.`fk_id_beneficiario`=`fkIdBeneficiario`.`id_beneficiario`) WHERE (fk_id_beneficiario = 48 AND estado_historia_social LIKE %1%) LIMIT 1.
+in /var/www/sisscsj/yii/protected/controllers/HistoriaSocial/Read.php (58)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 15:40:18 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id_historial_social' in 'order clause'. La sentencia SQL ejecutada fue: SELECT `t`.`id_historia_social` AS `t0_c0`, `t`.`fk_id_beneficiario` AS `t0_c1`, `t`.`historia_social` AS `t0_c2`, `t`.`dinamica_familiar_historia_social` AS `t0_c3`, `t`.`situacion_actual_historia_social` AS `t0_c4`, `t`.`estado_historia_social` AS `t0_c5`, `fkIdBeneficiario`.`id_beneficiario` AS `t1_c0`, `fkIdBeneficiario`.`fk_id_religion` AS `t1_c1`, `fkIdBeneficiario`.`fk_id_entidad_salud` AS `t1_c2`, `fkIdBeneficiario`.`fk_id_curso` AS `t1_c3`, `fkIdBeneficiario`.`fk_id_nivel` AS `t1_c4`, `fkIdBeneficiario`.`fk_id_turno` AS `t1_c5`, `fkIdBeneficiario`.`fk_id_formacion` AS `t1_c6`, `fkIdBeneficiario`.`codigo_beneficiario` AS `t1_c7`, `fkIdBeneficiario`.`primer_nombre_beneficiario` AS `t1_c8`, `fkIdBeneficiario`.`segundo_nombre_beneficiario` AS `t1_c9`, `fkIdBeneficiario`.`apellido_paterno_beneficiario` AS `t1_c10`, `fkIdBeneficiario`.`apellido_materno_beneficiario` AS `t1_c11`, `fkIdBeneficiario`.`fecha_nacimiento_beneficiario` AS `t1_c12`, `fkIdBeneficiario`.`sexo_beneficiario` AS `t1_c13`, `fkIdBeneficiario`.`numero_hijo_beneficiario` AS `t1_c14`, `fkIdBeneficiario`.`fotografia_beneficiario` AS `t1_c15`, `fkIdBeneficiario`.`observacion_beneficiario` AS `t1_c16`, `fkIdBeneficiario`.`trabaja_beneficiario` AS `t1_c17`, `fkIdBeneficiario`.`carnet_de_salud_beneficiario` AS `t1_c18`, `fkIdBeneficiario`.`libreta_escolar_beneficiario` AS `t1_c19`, `fkIdBeneficiario`.`informacion_relevante_beneficiario` AS `t1_c20`, `fkIdBeneficiario`.`fecha_creacion_beneficiario` AS `t1_c21`, `fkIdBeneficiario`.`numero_caso_beneficiario_patrocinador` AS `t1_c22`, `fkIdBeneficiario`.`numero_ninio_beneficiario_patrocinador` AS `t1_c23`, `fkIdBeneficiario`.`codigo_donante_beneficiario_patrocinador` AS `t1_c24`, `fkIdBeneficiario`.`nombre_patrocinador_beneficiario_patrocinador` AS `t1_c25` FROM `historia_social` `t`  LEFT OUTER JOIN `beneficiario` `fkIdBeneficiario` ON (`t`.`fk_id_beneficiario`=`fkIdBeneficiario`.`id_beneficiario`) WHERE (fk_id_beneficiario = 48 AND estado_historia_social LIKE '%1%') ORDER BY id_historial_social .
+in /var/www/sisscsj/yii/protected/controllers/HistoriaSocial/Read.php (44)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 17:14:48 [error] [php] Illegal string offset 'property' (/var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/Read.php:52)
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): BeneficiarioFamiliaController->runAction()
+#1 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/yii-framework/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): BeneficiarioFamiliaController->filterAccessControl()
+#4 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii-framework/yii/framework/web/CController.php(265): BeneficiarioFamiliaController->runActionWithFilters()
+#7 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): BeneficiarioFamiliaController->run()
+#8 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/sisscsj/yii/index.php(18): CWebApplication->run()
+REQUEST_URI=/sisscsj/yii/index.php/BeneficiarioFamilia?_dc=1444079691397&query=&page=1&start=0&limit=25&filter=%5B%7B%22property%22%3A%22id_beneficiario%22%2C%22value%22%3A48%7D%5D&callback=Ext.data.JsonP.callback18
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/Read.php (52)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 17:14:48 [error] [php] Illegal string offset 'property' (/var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/Read.php:52)
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): BeneficiarioFamiliaController->runAction()
+#1 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/yii-framework/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): BeneficiarioFamiliaController->filterAccessControl()
+#4 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii-framework/yii/framework/web/CController.php(265): BeneficiarioFamiliaController->runActionWithFilters()
+#7 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): BeneficiarioFamiliaController->run()
+#8 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/sisscsj/yii/index.php(18): CWebApplication->run()
+REQUEST_URI=/sisscsj/yii/index.php/BeneficiarioFamilia?_dc=1444079691344&page=1&start=0&limit=25&filter=%5B%7B%22property%22%3A%22id_beneficiario%22%2C%22value%22%3A48%7D%5D&callback=Ext.data.JsonP.callback17
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/Read.php (52)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 17:19:33 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia` AS `t0_c0`, `t`.`fk_id_beneficiario` AS `t0_c1`, `t`.`fk_id_familia` AS `t0_c2`, `t`.`fk_id_tipo_parentesco` AS `t0_c3`, `t`.`vive_casa_beneficiario_familia` AS `t0_c4`, `t`.`estado_beneficiario_familia` AS `t0_c5`, `t`.`fecha_creacion_beneficiario_familia` AS `t0_c6`, `t`.`responsable_beneficiario` AS `t0_c7`, `fkIdBeneficiario`.`id_beneficiario` AS `t1_c0`, `fkIdBeneficiario`.`fk_id_religion` AS `t1_c1`, `fkIdBeneficiario`.`fk_id_entidad_salud` AS `t1_c2`, `fkIdBeneficiario`.`fk_id_curso` AS `t1_c3`, `fkIdBeneficiario`.`fk_id_nivel` AS `t1_c4`, `fkIdBeneficiario`.`fk_id_turno` AS `t1_c5`, `fkIdBeneficiario`.`fk_id_formacion` AS `t1_c6`, `fkIdBeneficiario`.`codigo_beneficiario` AS `t1_c7`, `fkIdBeneficiario`.`primer_nombre_beneficiario` AS `t1_c8`, `fkIdBeneficiario`.`segundo_nombre_beneficiario` AS `t1_c9`, `fkIdBeneficiario`.`apellido_paterno_beneficiario` AS `t1_c10`, `fkIdBeneficiario`.`apellido_materno_beneficiario` AS `t1_c11`, `fkIdBeneficiario`.`fecha_nacimiento_beneficiario` AS `t1_c12`, `fkIdBeneficiario`.`sexo_beneficiario` AS `t1_c13`, `fkIdBeneficiario`.`numero_hijo_beneficiario` AS `t1_c14`, `fkIdBeneficiario`.`fotografia_beneficiario` AS `t1_c15`, `fkIdBeneficiario`.`observacion_beneficiario` AS `t1_c16`, `fkIdBeneficiario`.`trabaja_beneficiario` AS `t1_c17`, `fkIdBeneficiario`.`carnet_de_salud_beneficiario` AS `t1_c18`, `fkIdBeneficiario`.`libreta_escolar_beneficiario` AS `t1_c19`, `fkIdBeneficiario`.`informacion_relevante_beneficiario` AS `t1_c20`, `fkIdBeneficiario`.`fecha_creacion_beneficiario` AS `t1_c21`, `fkIdBeneficiario`.`numero_caso_beneficiario_patrocinador` AS `t1_c22`, `fkIdBeneficiario`.`numero_ninio_beneficiario_patrocinador` AS `t1_c23`, `fkIdBeneficiario`.`codigo_donante_beneficiario_patrocinador` AS `t1_c24`, `fkIdBeneficiario`.`nombre_patrocinador_beneficiario_patrocinador` AS `t1_c25`, `fkIdFamilia`.`id_familia` AS `t2_c0`, `fkIdFamilia`.`codigo_familia` AS `t2_c1`, `fkIdFamilia`.`codigo_familia_antiguo` AS `t2_c2`, `fkIdFamilia`.`numero_hijos_viven_familia` AS `t2_c3`, `fkIdFamilia`.`estado_familia` AS `t2_c4`, `fkIdFamilia`.`fecha_creacion_familia` AS `t2_c5`, `fkIdTipoParentesco`.`id_tipo_parentesco` AS `t3_c0`, `fkIdTipoParentesco`.`nombre_tipo_parentesco` AS `t3_c1`, `fkIdTipoParentesco`.`descripcion_tipo_parentesco` AS `t3_c2` FROM `beneficiario_familia` `t`  LEFT OUTER JOIN `beneficiario` `fkIdBeneficiario` ON (`t`.`fk_id_beneficiario`=`fkIdBeneficiario`.`id_beneficiario`) LEFT OUTER JOIN `familia` `fkIdFamilia` ON (`t`.`fk_id_familia`=`fkIdFamilia`.`id_familia`) LEFT OUTER JOIN `tipo_parentesco` `fkIdTipoParentesco` ON (`t`.`fk_id_tipo_parentesco`=`fkIdTipoParentesco`.`id_tipo_parentesco`) WHERE (fk_id_beneficiario = 130 AND ).
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/Read.php (54)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 17:20:33 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia` AS `t0_c0`, `t`.`fk_id_beneficiario` AS `t0_c1`, `t`.`fk_id_familia` AS `t0_c2`, `t`.`fk_id_tipo_parentesco` AS `t0_c3`, `t`.`vive_casa_beneficiario_familia` AS `t0_c4`, `t`.`estado_beneficiario_familia` AS `t0_c5`, `t`.`fecha_creacion_beneficiario_familia` AS `t0_c6`, `t`.`responsable_beneficiario` AS `t0_c7`, `fkIdBeneficiario`.`id_beneficiario` AS `t1_c0`, `fkIdBeneficiario`.`fk_id_religion` AS `t1_c1`, `fkIdBeneficiario`.`fk_id_entidad_salud` AS `t1_c2`, `fkIdBeneficiario`.`fk_id_curso` AS `t1_c3`, `fkIdBeneficiario`.`fk_id_nivel` AS `t1_c4`, `fkIdBeneficiario`.`fk_id_turno` AS `t1_c5`, `fkIdBeneficiario`.`fk_id_formacion` AS `t1_c6`, `fkIdBeneficiario`.`codigo_beneficiario` AS `t1_c7`, `fkIdBeneficiario`.`primer_nombre_beneficiario` AS `t1_c8`, `fkIdBeneficiario`.`segundo_nombre_beneficiario` AS `t1_c9`, `fkIdBeneficiario`.`apellido_paterno_beneficiario` AS `t1_c10`, `fkIdBeneficiario`.`apellido_materno_beneficiario` AS `t1_c11`, `fkIdBeneficiario`.`fecha_nacimiento_beneficiario` AS `t1_c12`, `fkIdBeneficiario`.`sexo_beneficiario` AS `t1_c13`, `fkIdBeneficiario`.`numero_hijo_beneficiario` AS `t1_c14`, `fkIdBeneficiario`.`fotografia_beneficiario` AS `t1_c15`, `fkIdBeneficiario`.`observacion_beneficiario` AS `t1_c16`, `fkIdBeneficiario`.`trabaja_beneficiario` AS `t1_c17`, `fkIdBeneficiario`.`carnet_de_salud_beneficiario` AS `t1_c18`, `fkIdBeneficiario`.`libreta_escolar_beneficiario` AS `t1_c19`, `fkIdBeneficiario`.`informacion_relevante_beneficiario` AS `t1_c20`, `fkIdBeneficiario`.`fecha_creacion_beneficiario` AS `t1_c21`, `fkIdBeneficiario`.`numero_caso_beneficiario_patrocinador` AS `t1_c22`, `fkIdBeneficiario`.`numero_ninio_beneficiario_patrocinador` AS `t1_c23`, `fkIdBeneficiario`.`codigo_donante_beneficiario_patrocinador` AS `t1_c24`, `fkIdBeneficiario`.`nombre_patrocinador_beneficiario_patrocinador` AS `t1_c25`, `fkIdFamilia`.`id_familia` AS `t2_c0`, `fkIdFamilia`.`codigo_familia` AS `t2_c1`, `fkIdFamilia`.`codigo_familia_antiguo` AS `t2_c2`, `fkIdFamilia`.`numero_hijos_viven_familia` AS `t2_c3`, `fkIdFamilia`.`estado_familia` AS `t2_c4`, `fkIdFamilia`.`fecha_creacion_familia` AS `t2_c5`, `fkIdTipoParentesco`.`id_tipo_parentesco` AS `t3_c0`, `fkIdTipoParentesco`.`nombre_tipo_parentesco` AS `t3_c1`, `fkIdTipoParentesco`.`descripcion_tipo_parentesco` AS `t3_c2` FROM `beneficiario_familia` `t`  LEFT OUTER JOIN `beneficiario` `fkIdBeneficiario` ON (`t`.`fk_id_beneficiario`=`fkIdBeneficiario`.`id_beneficiario`) LEFT OUTER JOIN `familia` `fkIdFamilia` ON (`t`.`fk_id_familia`=`fkIdFamilia`.`id_familia`) LEFT OUTER JOIN `tipo_parentesco` `fkIdTipoParentesco` ON (`t`.`fk_id_tipo_parentesco`=`fkIdTipoParentesco`.`id_tipo_parentesco`) WHERE (fk_id_beneficiario = 130 AND ).
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/Read.php (54)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 17:21:24 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia` AS `t0_c0`, `t`.`fk_id_beneficiario` AS `t0_c1`, `t`.`fk_id_familia` AS `t0_c2`, `t`.`fk_id_tipo_parentesco` AS `t0_c3`, `t`.`vive_casa_beneficiario_familia` AS `t0_c4`, `t`.`estado_beneficiario_familia` AS `t0_c5`, `t`.`fecha_creacion_beneficiario_familia` AS `t0_c6`, `t`.`responsable_beneficiario` AS `t0_c7`, `fkIdBeneficiario`.`id_beneficiario` AS `t1_c0`, `fkIdBeneficiario`.`fk_id_religion` AS `t1_c1`, `fkIdBeneficiario`.`fk_id_entidad_salud` AS `t1_c2`, `fkIdBeneficiario`.`fk_id_curso` AS `t1_c3`, `fkIdBeneficiario`.`fk_id_nivel` AS `t1_c4`, `fkIdBeneficiario`.`fk_id_turno` AS `t1_c5`, `fkIdBeneficiario`.`fk_id_formacion` AS `t1_c6`, `fkIdBeneficiario`.`codigo_beneficiario` AS `t1_c7`, `fkIdBeneficiario`.`primer_nombre_beneficiario` AS `t1_c8`, `fkIdBeneficiario`.`segundo_nombre_beneficiario` AS `t1_c9`, `fkIdBeneficiario`.`apellido_paterno_beneficiario` AS `t1_c10`, `fkIdBeneficiario`.`apellido_materno_beneficiario` AS `t1_c11`, `fkIdBeneficiario`.`fecha_nacimiento_beneficiario` AS `t1_c12`, `fkIdBeneficiario`.`sexo_beneficiario` AS `t1_c13`, `fkIdBeneficiario`.`numero_hijo_beneficiario` AS `t1_c14`, `fkIdBeneficiario`.`fotografia_beneficiario` AS `t1_c15`, `fkIdBeneficiario`.`observacion_beneficiario` AS `t1_c16`, `fkIdBeneficiario`.`trabaja_beneficiario` AS `t1_c17`, `fkIdBeneficiario`.`carnet_de_salud_beneficiario` AS `t1_c18`, `fkIdBeneficiario`.`libreta_escolar_beneficiario` AS `t1_c19`, `fkIdBeneficiario`.`informacion_relevante_beneficiario` AS `t1_c20`, `fkIdBeneficiario`.`fecha_creacion_beneficiario` AS `t1_c21`, `fkIdBeneficiario`.`numero_caso_beneficiario_patrocinador` AS `t1_c22`, `fkIdBeneficiario`.`numero_ninio_beneficiario_patrocinador` AS `t1_c23`, `fkIdBeneficiario`.`codigo_donante_beneficiario_patrocinador` AS `t1_c24`, `fkIdBeneficiario`.`nombre_patrocinador_beneficiario_patrocinador` AS `t1_c25` FROM `beneficiario_familia` `t`  LEFT OUTER JOIN `beneficiario` `fkIdBeneficiario` ON (`t`.`fk_id_beneficiario`=`fkIdBeneficiario`.`id_beneficiario`) WHERE (fk_id_beneficiario = 130 AND ).
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/Read.php (54)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 17:21:57 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia` AS `t0_c0`, `t`.`fk_id_beneficiario` AS `t0_c1`, `t`.`fk_id_familia` AS `t0_c2`, `t`.`fk_id_tipo_parentesco` AS `t0_c3`, `t`.`vive_casa_beneficiario_familia` AS `t0_c4`, `t`.`estado_beneficiario_familia` AS `t0_c5`, `t`.`fecha_creacion_beneficiario_familia` AS `t0_c6`, `t`.`responsable_beneficiario` AS `t0_c7`, `fkIdBeneficiario`.`id_beneficiario` AS `t1_c0`, `fkIdBeneficiario`.`fk_id_religion` AS `t1_c1`, `fkIdBeneficiario`.`fk_id_entidad_salud` AS `t1_c2`, `fkIdBeneficiario`.`fk_id_curso` AS `t1_c3`, `fkIdBeneficiario`.`fk_id_nivel` AS `t1_c4`, `fkIdBeneficiario`.`fk_id_turno` AS `t1_c5`, `fkIdBeneficiario`.`fk_id_formacion` AS `t1_c6`, `fkIdBeneficiario`.`codigo_beneficiario` AS `t1_c7`, `fkIdBeneficiario`.`primer_nombre_beneficiario` AS `t1_c8`, `fkIdBeneficiario`.`segundo_nombre_beneficiario` AS `t1_c9`, `fkIdBeneficiario`.`apellido_paterno_beneficiario` AS `t1_c10`, `fkIdBeneficiario`.`apellido_materno_beneficiario` AS `t1_c11`, `fkIdBeneficiario`.`fecha_nacimiento_beneficiario` AS `t1_c12`, `fkIdBeneficiario`.`sexo_beneficiario` AS `t1_c13`, `fkIdBeneficiario`.`numero_hijo_beneficiario` AS `t1_c14`, `fkIdBeneficiario`.`fotografia_beneficiario` AS `t1_c15`, `fkIdBeneficiario`.`observacion_beneficiario` AS `t1_c16`, `fkIdBeneficiario`.`trabaja_beneficiario` AS `t1_c17`, `fkIdBeneficiario`.`carnet_de_salud_beneficiario` AS `t1_c18`, `fkIdBeneficiario`.`libreta_escolar_beneficiario` AS `t1_c19`, `fkIdBeneficiario`.`informacion_relevante_beneficiario` AS `t1_c20`, `fkIdBeneficiario`.`fecha_creacion_beneficiario` AS `t1_c21`, `fkIdBeneficiario`.`numero_caso_beneficiario_patrocinador` AS `t1_c22`, `fkIdBeneficiario`.`numero_ninio_beneficiario_patrocinador` AS `t1_c23`, `fkIdBeneficiario`.`codigo_donante_beneficiario_patrocinador` AS `t1_c24`, `fkIdBeneficiario`.`nombre_patrocinador_beneficiario_patrocinador` AS `t1_c25` FROM `beneficiario_familia` `t`  LEFT OUTER JOIN `beneficiario` `fkIdBeneficiario` ON (`t`.`fk_id_beneficiario`=`fkIdBeneficiario`.`id_beneficiario`) WHERE (fk_id_beneficiario = 130 AND ).
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/Read.php (54)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 17:25:37 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia` AS `t0_c0`, `t`.`fk_id_beneficiario` AS `t0_c1`, `t`.`fk_id_familia` AS `t0_c2`, `t`.`fk_id_tipo_parentesco` AS `t0_c3`, `t`.`vive_casa_beneficiario_familia` AS `t0_c4`, `t`.`estado_beneficiario_familia` AS `t0_c5`, `t`.`fecha_creacion_beneficiario_familia` AS `t0_c6`, `t`.`responsable_beneficiario` AS `t0_c7`, `fkIdBeneficiario`.`id_beneficiario` AS `t1_c0`, `fkIdBeneficiario`.`fk_id_religion` AS `t1_c1`, `fkIdBeneficiario`.`fk_id_entidad_salud` AS `t1_c2`, `fkIdBeneficiario`.`fk_id_curso` AS `t1_c3`, `fkIdBeneficiario`.`fk_id_nivel` AS `t1_c4`, `fkIdBeneficiario`.`fk_id_turno` AS `t1_c5`, `fkIdBeneficiario`.`fk_id_formacion` AS `t1_c6`, `fkIdBeneficiario`.`codigo_beneficiario` AS `t1_c7`, `fkIdBeneficiario`.`primer_nombre_beneficiario` AS `t1_c8`, `fkIdBeneficiario`.`segundo_nombre_beneficiario` AS `t1_c9`, `fkIdBeneficiario`.`apellido_paterno_beneficiario` AS `t1_c10`, `fkIdBeneficiario`.`apellido_materno_beneficiario` AS `t1_c11`, `fkIdBeneficiario`.`fecha_nacimiento_beneficiario` AS `t1_c12`, `fkIdBeneficiario`.`sexo_beneficiario` AS `t1_c13`, `fkIdBeneficiario`.`numero_hijo_beneficiario` AS `t1_c14`, `fkIdBeneficiario`.`fotografia_beneficiario` AS `t1_c15`, `fkIdBeneficiario`.`observacion_beneficiario` AS `t1_c16`, `fkIdBeneficiario`.`trabaja_beneficiario` AS `t1_c17`, `fkIdBeneficiario`.`carnet_de_salud_beneficiario` AS `t1_c18`, `fkIdBeneficiario`.`libreta_escolar_beneficiario` AS `t1_c19`, `fkIdBeneficiario`.`informacion_relevante_beneficiario` AS `t1_c20`, `fkIdBeneficiario`.`fecha_creacion_beneficiario` AS `t1_c21`, `fkIdBeneficiario`.`numero_caso_beneficiario_patrocinador` AS `t1_c22`, `fkIdBeneficiario`.`numero_ninio_beneficiario_patrocinador` AS `t1_c23`, `fkIdBeneficiario`.`codigo_donante_beneficiario_patrocinador` AS `t1_c24`, `fkIdBeneficiario`.`nombre_patrocinador_beneficiario_patrocinador` AS `t1_c25` FROM `beneficiario_familia` `t`  LEFT OUTER JOIN `beneficiario` `fkIdBeneficiario` ON (`t`.`fk_id_beneficiario`=`fkIdBeneficiario`.`id_beneficiario`) WHERE (fk_id_beneficiario = 130 AND ).
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/Read.php (54)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 17:25:51 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia` AS `t0_c0`, `t`.`fk_id_beneficiario` AS `t0_c1`, `t`.`fk_id_familia` AS `t0_c2`, `t`.`fk_id_tipo_parentesco` AS `t0_c3`, `t`.`vive_casa_beneficiario_familia` AS `t0_c4`, `t`.`estado_beneficiario_familia` AS `t0_c5`, `t`.`fecha_creacion_beneficiario_familia` AS `t0_c6`, `t`.`responsable_beneficiario` AS `t0_c7`, `fkIdBeneficiario`.`id_beneficiario` AS `t1_c0`, `fkIdBeneficiario`.`fk_id_religion` AS `t1_c1`, `fkIdBeneficiario`.`fk_id_entidad_salud` AS `t1_c2`, `fkIdBeneficiario`.`fk_id_curso` AS `t1_c3`, `fkIdBeneficiario`.`fk_id_nivel` AS `t1_c4`, `fkIdBeneficiario`.`fk_id_turno` AS `t1_c5`, `fkIdBeneficiario`.`fk_id_formacion` AS `t1_c6`, `fkIdBeneficiario`.`codigo_beneficiario` AS `t1_c7`, `fkIdBeneficiario`.`primer_nombre_beneficiario` AS `t1_c8`, `fkIdBeneficiario`.`segundo_nombre_beneficiario` AS `t1_c9`, `fkIdBeneficiario`.`apellido_paterno_beneficiario` AS `t1_c10`, `fkIdBeneficiario`.`apellido_materno_beneficiario` AS `t1_c11`, `fkIdBeneficiario`.`fecha_nacimiento_beneficiario` AS `t1_c12`, `fkIdBeneficiario`.`sexo_beneficiario` AS `t1_c13`, `fkIdBeneficiario`.`numero_hijo_beneficiario` AS `t1_c14`, `fkIdBeneficiario`.`fotografia_beneficiario` AS `t1_c15`, `fkIdBeneficiario`.`observacion_beneficiario` AS `t1_c16`, `fkIdBeneficiario`.`trabaja_beneficiario` AS `t1_c17`, `fkIdBeneficiario`.`carnet_de_salud_beneficiario` AS `t1_c18`, `fkIdBeneficiario`.`libreta_escolar_beneficiario` AS `t1_c19`, `fkIdBeneficiario`.`informacion_relevante_beneficiario` AS `t1_c20`, `fkIdBeneficiario`.`fecha_creacion_beneficiario` AS `t1_c21`, `fkIdBeneficiario`.`numero_caso_beneficiario_patrocinador` AS `t1_c22`, `fkIdBeneficiario`.`numero_ninio_beneficiario_patrocinador` AS `t1_c23`, `fkIdBeneficiario`.`codigo_donante_beneficiario_patrocinador` AS `t1_c24`, `fkIdBeneficiario`.`nombre_patrocinador_beneficiario_patrocinador` AS `t1_c25` FROM `beneficiario_familia` `t`  LEFT OUTER JOIN `beneficiario` `fkIdBeneficiario` ON (`t`.`fk_id_beneficiario`=`fkIdBeneficiario`.`id_beneficiario`) WHERE (fk_id_beneficiario = 130 AND ).
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/Read.php (54)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 17:26:20 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia` AS `t0_c0`, `t`.`fk_id_beneficiario` AS `t0_c1`, `t`.`fk_id_familia` AS `t0_c2`, `t`.`fk_id_tipo_parentesco` AS `t0_c3`, `t`.`vive_casa_beneficiario_familia` AS `t0_c4`, `t`.`estado_beneficiario_familia` AS `t0_c5`, `t`.`fecha_creacion_beneficiario_familia` AS `t0_c6`, `t`.`responsable_beneficiario` AS `t0_c7`, `fkIdBeneficiario`.`id_beneficiario` AS `t1_c0`, `fkIdBeneficiario`.`fk_id_religion` AS `t1_c1`, `fkIdBeneficiario`.`fk_id_entidad_salud` AS `t1_c2`, `fkIdBeneficiario`.`fk_id_curso` AS `t1_c3`, `fkIdBeneficiario`.`fk_id_nivel` AS `t1_c4`, `fkIdBeneficiario`.`fk_id_turno` AS `t1_c5`, `fkIdBeneficiario`.`fk_id_formacion` AS `t1_c6`, `fkIdBeneficiario`.`codigo_beneficiario` AS `t1_c7`, `fkIdBeneficiario`.`primer_nombre_beneficiario` AS `t1_c8`, `fkIdBeneficiario`.`segundo_nombre_beneficiario` AS `t1_c9`, `fkIdBeneficiario`.`apellido_paterno_beneficiario` AS `t1_c10`, `fkIdBeneficiario`.`apellido_materno_beneficiario` AS `t1_c11`, `fkIdBeneficiario`.`fecha_nacimiento_beneficiario` AS `t1_c12`, `fkIdBeneficiario`.`sexo_beneficiario` AS `t1_c13`, `fkIdBeneficiario`.`numero_hijo_beneficiario` AS `t1_c14`, `fkIdBeneficiario`.`fotografia_beneficiario` AS `t1_c15`, `fkIdBeneficiario`.`observacion_beneficiario` AS `t1_c16`, `fkIdBeneficiario`.`trabaja_beneficiario` AS `t1_c17`, `fkIdBeneficiario`.`carnet_de_salud_beneficiario` AS `t1_c18`, `fkIdBeneficiario`.`libreta_escolar_beneficiario` AS `t1_c19`, `fkIdBeneficiario`.`informacion_relevante_beneficiario` AS `t1_c20`, `fkIdBeneficiario`.`fecha_creacion_beneficiario` AS `t1_c21`, `fkIdBeneficiario`.`numero_caso_beneficiario_patrocinador` AS `t1_c22`, `fkIdBeneficiario`.`numero_ninio_beneficiario_patrocinador` AS `t1_c23`, `fkIdBeneficiario`.`codigo_donante_beneficiario_patrocinador` AS `t1_c24`, `fkIdBeneficiario`.`nombre_patrocinador_beneficiario_patrocinador` AS `t1_c25` FROM `beneficiario_familia` `t`  LEFT OUTER JOIN `beneficiario` `fkIdBeneficiario` ON (`t`.`fk_id_beneficiario`=`fkIdBeneficiario`.`id_beneficiario`) WHERE (fk_id_beneficiario = 130 AND ).
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/Read.php (54)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 17:26:38 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia` AS `t0_c0`, `t`.`fk_id_beneficiario` AS `t0_c1`, `t`.`fk_id_familia` AS `t0_c2`, `t`.`fk_id_tipo_parentesco` AS `t0_c3`, `t`.`vive_casa_beneficiario_familia` AS `t0_c4`, `t`.`estado_beneficiario_familia` AS `t0_c5`, `t`.`fecha_creacion_beneficiario_familia` AS `t0_c6`, `t`.`responsable_beneficiario` AS `t0_c7`, `fkIdBeneficiario`.`id_beneficiario` AS `t1_c0`, `fkIdBeneficiario`.`fk_id_religion` AS `t1_c1`, `fkIdBeneficiario`.`fk_id_entidad_salud` AS `t1_c2`, `fkIdBeneficiario`.`fk_id_curso` AS `t1_c3`, `fkIdBeneficiario`.`fk_id_nivel` AS `t1_c4`, `fkIdBeneficiario`.`fk_id_turno` AS `t1_c5`, `fkIdBeneficiario`.`fk_id_formacion` AS `t1_c6`, `fkIdBeneficiario`.`codigo_beneficiario` AS `t1_c7`, `fkIdBeneficiario`.`primer_nombre_beneficiario` AS `t1_c8`, `fkIdBeneficiario`.`segundo_nombre_beneficiario` AS `t1_c9`, `fkIdBeneficiario`.`apellido_paterno_beneficiario` AS `t1_c10`, `fkIdBeneficiario`.`apellido_materno_beneficiario` AS `t1_c11`, `fkIdBeneficiario`.`fecha_nacimiento_beneficiario` AS `t1_c12`, `fkIdBeneficiario`.`sexo_beneficiario` AS `t1_c13`, `fkIdBeneficiario`.`numero_hijo_beneficiario` AS `t1_c14`, `fkIdBeneficiario`.`fotografia_beneficiario` AS `t1_c15`, `fkIdBeneficiario`.`observacion_beneficiario` AS `t1_c16`, `fkIdBeneficiario`.`trabaja_beneficiario` AS `t1_c17`, `fkIdBeneficiario`.`carnet_de_salud_beneficiario` AS `t1_c18`, `fkIdBeneficiario`.`libreta_escolar_beneficiario` AS `t1_c19`, `fkIdBeneficiario`.`informacion_relevante_beneficiario` AS `t1_c20`, `fkIdBeneficiario`.`fecha_creacion_beneficiario` AS `t1_c21`, `fkIdBeneficiario`.`numero_caso_beneficiario_patrocinador` AS `t1_c22`, `fkIdBeneficiario`.`numero_ninio_beneficiario_patrocinador` AS `t1_c23`, `fkIdBeneficiario`.`codigo_donante_beneficiario_patrocinador` AS `t1_c24`, `fkIdBeneficiario`.`nombre_patrocinador_beneficiario_patrocinador` AS `t1_c25` FROM `beneficiario_familia` `t`  LEFT OUTER JOIN `beneficiario` `fkIdBeneficiario` ON (`t`.`fk_id_beneficiario`=`fkIdBeneficiario`.`id_beneficiario`) WHERE (fk_id_beneficiario = 130 AND ).
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/Read.php (54)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 17:28:41 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1. La sentencia SQL ejecutada fue: SELECT `t`.`id_beneficiario_familia` AS `t0_c0`, `t`.`fk_id_beneficiario` AS `t0_c1`, `t`.`fk_id_familia` AS `t0_c2`, `t`.`fk_id_tipo_parentesco` AS `t0_c3`, `t`.`vive_casa_beneficiario_familia` AS `t0_c4`, `t`.`estado_beneficiario_familia` AS `t0_c5`, `t`.`fecha_creacion_beneficiario_familia` AS `t0_c6`, `t`.`responsable_beneficiario` AS `t0_c7`, `fkIdBeneficiario`.`id_beneficiario` AS `t1_c0`, `fkIdBeneficiario`.`fk_id_religion` AS `t1_c1`, `fkIdBeneficiario`.`fk_id_entidad_salud` AS `t1_c2`, `fkIdBeneficiario`.`fk_id_curso` AS `t1_c3`, `fkIdBeneficiario`.`fk_id_nivel` AS `t1_c4`, `fkIdBeneficiario`.`fk_id_turno` AS `t1_c5`, `fkIdBeneficiario`.`fk_id_formacion` AS `t1_c6`, `fkIdBeneficiario`.`codigo_beneficiario` AS `t1_c7`, `fkIdBeneficiario`.`primer_nombre_beneficiario` AS `t1_c8`, `fkIdBeneficiario`.`segundo_nombre_beneficiario` AS `t1_c9`, `fkIdBeneficiario`.`apellido_paterno_beneficiario` AS `t1_c10`, `fkIdBeneficiario`.`apellido_materno_beneficiario` AS `t1_c11`, `fkIdBeneficiario`.`fecha_nacimiento_beneficiario` AS `t1_c12`, `fkIdBeneficiario`.`sexo_beneficiario` AS `t1_c13`, `fkIdBeneficiario`.`numero_hijo_beneficiario` AS `t1_c14`, `fkIdBeneficiario`.`fotografia_beneficiario` AS `t1_c15`, `fkIdBeneficiario`.`observacion_beneficiario` AS `t1_c16`, `fkIdBeneficiario`.`trabaja_beneficiario` AS `t1_c17`, `fkIdBeneficiario`.`carnet_de_salud_beneficiario` AS `t1_c18`, `fkIdBeneficiario`.`libreta_escolar_beneficiario` AS `t1_c19`, `fkIdBeneficiario`.`informacion_relevante_beneficiario` AS `t1_c20`, `fkIdBeneficiario`.`fecha_creacion_beneficiario` AS `t1_c21`, `fkIdBeneficiario`.`numero_caso_beneficiario_patrocinador` AS `t1_c22`, `fkIdBeneficiario`.`numero_ninio_beneficiario_patrocinador` AS `t1_c23`, `fkIdBeneficiario`.`codigo_donante_beneficiario_patrocinador` AS `t1_c24`, `fkIdBeneficiario`.`nombre_patrocinador_beneficiario_patrocinador` AS `t1_c25` FROM `beneficiario_familia` `t`  LEFT OUTER JOIN `beneficiario` `fkIdBeneficiario` ON (`t`.`fk_id_beneficiario`=`fkIdBeneficiario`.`id_beneficiario`) WHERE (fk_id_beneficiario = 130 AND ).
+in /var/www/sisscsj/yii/protected/controllers/BeneficiarioFamilia/Read.php (56)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/05 17:44:51 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND estado_historia_social LIKE '%1%')' at line 1. La sentencia SQL ejecutada fue: SELECT `t`.`id_historia_social` AS `t0_c0`, `t`.`fk_id_beneficiario` AS `t0_c1`, `t`.`historia_social` AS `t0_c2`, `t`.`dinamica_familiar_historia_social` AS `t0_c3`, `t`.`situacion_actual_historia_social` AS `t0_c4`, `t`.`estado_historia_social` AS `t0_c5`, `fkIdBeneficiario`.`id_beneficiario` AS `t1_c0`, `fkIdBeneficiario`.`fk_id_religion` AS `t1_c1`, `fkIdBeneficiario`.`fk_id_entidad_salud` AS `t1_c2`, `fkIdBeneficiario`.`fk_id_curso` AS `t1_c3`, `fkIdBeneficiario`.`fk_id_nivel` AS `t1_c4`, `fkIdBeneficiario`.`fk_id_turno` AS `t1_c5`, `fkIdBeneficiario`.`fk_id_formacion` AS `t1_c6`, `fkIdBeneficiario`.`codigo_beneficiario` AS `t1_c7`, `fkIdBeneficiario`.`primer_nombre_beneficiario` AS `t1_c8`, `fkIdBeneficiario`.`segundo_nombre_beneficiario` AS `t1_c9`, `fkIdBeneficiario`.`apellido_paterno_beneficiario` AS `t1_c10`, `fkIdBeneficiario`.`apellido_materno_beneficiario` AS `t1_c11`, `fkIdBeneficiario`.`fecha_nacimiento_beneficiario` AS `t1_c12`, `fkIdBeneficiario`.`sexo_beneficiario` AS `t1_c13`, `fkIdBeneficiario`.`numero_hijo_beneficiario` AS `t1_c14`, `fkIdBeneficiario`.`fotografia_beneficiario` AS `t1_c15`, `fkIdBeneficiario`.`observacion_beneficiario` AS `t1_c16`, `fkIdBeneficiario`.`trabaja_beneficiario` AS `t1_c17`, `fkIdBeneficiario`.`carnet_de_salud_beneficiario` AS `t1_c18`, `fkIdBeneficiario`.`libreta_escolar_beneficiario` AS `t1_c19`, `fkIdBeneficiario`.`informacion_relevante_beneficiario` AS `t1_c20`, `fkIdBeneficiario`.`fecha_creacion_beneficiario` AS `t1_c21`, `fkIdBeneficiario`.`numero_caso_beneficiario_patrocinador` AS `t1_c22`, `fkIdBeneficiario`.`numero_ninio_beneficiario_patrocinador` AS `t1_c23`, `fkIdBeneficiario`.`codigo_donante_beneficiario_patrocinador` AS `t1_c24`, `fkIdBeneficiario`.`nombre_patrocinador_beneficiario_patrocinador` AS `t1_c25` FROM `historia_social` `t`  LEFT OUTER JOIN `beneficiario` `fkIdBeneficiario` ON (`t`.`fk_id_beneficiario`=`fkIdBeneficiario`.`id_beneficiario`) WHERE (fk_id_beneficiario =  AND estado_historia_social LIKE '%1%').
+in /var/www/sisscsj/yii/protected/controllers/HistoriaSocial/Read.php (50)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/19 18:17:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "usuario" solicitada.' in /var/www/yii-framework/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/web/CController.php(270): CController->missingAction('usuario')
+#1 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('usuario')
+#2 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/usuario')
+#3 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/sisscsj/yii/index.php/site/usuario?login
+---
+2015/10/19 18:18:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "usuario" solicitada.' in /var/www/yii-framework/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/web/CController.php(270): CController->missingAction('usuario')
+#1 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('usuario')
+#2 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/usuario/lo...')
+#3 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#5 {main}
+REQUEST_URI=/sisscsj/yii/index.php/site/usuario/login?
+---
+2015/10/19 18:31:13 [error] [system.db.CDbCommand] CDbCommand::fetch() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1. La sentencia SQL ejecutada fue: select * from usuario where(id_usuario=).
+in /var/www/sisscsj/yii/protected/models/CTQ.php (68)
+in /var/www/sisscsj/yii/protected/controllers/EvalAtencionMedica/Create.php (37)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/19 18:31:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1. The SQL statement executed was: select * from usuario where(id_usuario=)' in /var/www/yii-framework/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/sisscsj/yii/protected/models/CTQ.php(68): CDbCommand->queryRow()
+#2 /var/www/sisscsj/yii/protected/controllers/EvalAtencionMedica/Create.php(37): CTQ->validaFK('usuario', 'id_usuario', NULL)
+#3 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Create->run()
+#4 /var/www/yii-framework/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#5 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(Create))
+#6 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Create), Array)
+#12 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('EvalAtencionMed...')
+#14 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#16 {main}
+REQUEST_URI=/sisscsj/yii/index.php/EvalAtencionMedica/create?_dc=1445292986312&records=%7B%22id_atencion_medica%22%3Anull%2C%22fk_id_tipo_consulta%22%3A1%2C%22fk_id_usuario%22%3Anull%2C%22fk_id_diagnostico%22%3A1%2C%22fk_id_beneficiario%22%3A51%2C%22fecha_atencion_medica%22%3A%222015-10-02T00%3A00%3A00%22%2C%22observaciones_atencion_medica%22%3A%22%22%2C%22atencion_medica_enfermedad_comun%22%3A%22%5B%7B%5C%22fk_id_enfermedad_comun%5C%22%3A1%7D%2C%7B%5C%22fk_id_enfermedad_comun%5C%22%3A3%7D%5D%22%2C%22nombre_tipo_consulta%22%3A%22%22%2C%22nombre_usuario%22%3A%22%22%2C%22codigo_beneficiario%22%3A%22%22%2C%22nombre_diagnostico%22%3A%22%22%7D&callback=Ext.data.JsonP.callback10
+---
+2015/10/19 18:58:24 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'd.fk_id_donante' in 'where clause'. La sentencia SQL ejecutada fue: SELECT DISTINCT `t`.`id_familia`, `t`.`codigo_familia`, `t`.`codigo_familia_antiguo`, `t`.`numero_hijos_viven_familia`, `t`.`estado_familia`, `t`.`fecha_creacion_familia` FROM `familia` `t` LEFT JOIN familia_metodo_planificacion_familiar AS fmpf ON fmpf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario_familia AS bf ON bf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario AS b ON bf.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN beneficiario_entidad AS be ON be.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN beneficiario_donante AS bd ON bd.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN donante AS d ON bd.fk_id_donante = d.id_donante WHERE be.fk_id_entidad IN (SELECT
+ue.fk_id_entidad
+FROM
+usuario_entidad AS ue
+WHERE
+ue.fk_id_usuario = 1) AND b.primer_nombre_beneficiario LIKE '%fede%' OR d.fk_id_donante LIKE '%3%' ORDER BY id_familia asc LIMIT 10.
+in /var/www/sisscsj/yii/protected/controllers/Familia/Read.php (99)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/19 18:58:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'd.fk_id_donante' in 'where clause'. The SQL statement executed was: SELECT DISTINCT `t`.`id_familia`, `t`.`codigo_familia`, `t`.`codigo_familia_antiguo`, `t`.`numero_hijos_viven_familia`, `t`.`estado_familia`, `t`.`fecha_creacion_familia` FROM `familia` `t` LEFT JOIN familia_metodo_planificacion_familiar AS fmpf ON fmpf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario_familia AS bf ON bf.fk_id_familia = t.id_familia
+INNER JOIN beneficiario AS b ON bf.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN beneficiario_entidad AS be ON be.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN beneficiario_donante AS bd ON bd.fk_id_beneficiario = b.id_beneficiario
+INNER JOIN donante AS d ON bd.fk_id_donante = d.id_donante WHERE be.fk_id_entidad IN (SELECT
+ue.fk_id_entidad
+FROM
+usuario_entidad AS ue
+WHERE
+ue.fk_id_usuario = 1) AND b.primer_nombre_beneficiario LIKE '%fede%' OR d.fk_id_donante LIKE '%3%' ORDER BY id_familia asc LIMIT 10' in /var/www/yii-framework/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php(1356): CDbCommand->queryAll()
+#2 /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php(1475): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /var/www/sisscsj/yii/protected/controllers/Familia/Read.php(99): CActiveRecord->findAll(Object(CDbCriteria))
+#4 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Read->run()
+#5 /var/www/yii-framework/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#6 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(Read))
+#7 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Read), Array)
+#13 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('')
+#14 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Familia')
+#15 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#17 {main}
+REQUEST_URI=/sisscsj/yii/index.php/Familia?_dc=1445294767677&page=1&start=0&limit=10&filter=[{%22property%22:%22primer_nombre_beneficiario%22,%22value%22:%22fede%22},{%22property%22:%22fk_id_donante%22,%22value%22:3}]&callback=Ext.data.JsonP.callback9
+---
+2015/10/22 17:56:53 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sisscsj.historia_social' doesn't exist. La sentencia SQL ejecutada fue: SHOW FULL COLUMNS FROM `historia_social`.
+in /var/www/sisscsj/yii/protected/controllers/HistoriaSocial/Read.php (24)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/22 17:56:53 [error] [exception.CDbException] exception 'CDbException' with message 'La tabla "historia_social" definida en la clase active record "HistoriaSocial" no se ha podido encontrar en la base de datos.' in /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php:2385
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(HistoriaSocial))
+#1 /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 /var/www/sisscsj/yii/protected/controllers/HistoriaSocial/Read.php(24): CActiveRecord->__construct()
+#3 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Read->run()
+#4 /var/www/yii-framework/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#5 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(Read))
+#6 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Read), Array)
+#12 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('HistoriaSocial')
+#14 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#16 {main}
+REQUEST_URI=/sisscsj/yii/index.php/HistoriaSocial?_dc=1445551014489&page=1&start=0&limit=10&filter=%5B%7B%22property%22%3A%22fk_id_beneficiario%22%2C%22value%22%3A48%7D%5D&callback=Ext.data.JsonP.callback26
+HTTP_REFERER=http://192.168.1.110:8080/sisscsj/ext/index.html
+---
+2015/10/22 17:57:07 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sisscsj.historia_social' doesn't exist. La sentencia SQL ejecutada fue: SHOW FULL COLUMNS FROM `historia_social`.
+in /var/www/sisscsj/yii/protected/controllers/HistoriaSocial/Read.php (24)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/22 17:57:07 [error] [exception.CDbException] exception 'CDbException' with message 'La tabla "historia_social" definida en la clase active record "HistoriaSocial" no se ha podido encontrar en la base de datos.' in /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php:2385
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(HistoriaSocial))
+#1 /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 /var/www/sisscsj/yii/protected/controllers/HistoriaSocial/Read.php(24): CActiveRecord->__construct()
+#3 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Read->run()
+#4 /var/www/yii-framework/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#5 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(Read))
+#6 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Read), Array)
+#12 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('HistoriaSocial')
+#14 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#16 {main}
+REQUEST_URI=/sisscsj/yii/index.php/HistoriaSocial?_dc=1445551028881&page=1&start=0&limit=10&filter=%5B%7B%22property%22%3A%22fk_id_beneficiario%22%2C%22value%22%3A48%7D%5D&callback=Ext.data.JsonP.callback52
+HTTP_REFERER=http://192.168.1.110:8080/sisscsj/ext/index.html
+---
+2015/10/22 17:57:53 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sisscsj.historia_social' doesn't exist. La sentencia SQL ejecutada fue: SHOW FULL COLUMNS FROM `historia_social`.
+in /var/www/sisscsj/yii/protected/controllers/HistoriaSocial/Read.php (24)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/22 17:57:53 [error] [exception.CDbException] exception 'CDbException' with message 'La tabla "historia_social" definida en la clase active record "HistoriaSocial" no se ha podido encontrar en la base de datos.' in /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php:2385
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(HistoriaSocial))
+#1 /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 /var/www/sisscsj/yii/protected/controllers/HistoriaSocial/Read.php(24): CActiveRecord->__construct()
+#3 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Read->run()
+#4 /var/www/yii-framework/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#5 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(Read))
+#6 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Read), Array)
+#12 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('HistoriaSocial')
+#14 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#16 {main}
+REQUEST_URI=/sisscsj/yii/index.php/HistoriaSocial?_dc=1445551028881&page=1&start=0&limit=10&filter=%5B%7B%22property%22%3A%22fk_id_beneficiario%22%2C%22value%22%3A48%7D%5D&callback=Ext.data.JsonP.callback52
+---
+2015/10/22 17:58:42 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sisscsj.historia_social' doesn't exist. La sentencia SQL ejecutada fue: SHOW FULL COLUMNS FROM `historia_social`.
+in /var/www/sisscsj/yii/protected/controllers/HistoriaSocial/Read.php (24)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/22 17:58:42 [error] [exception.CDbException] exception 'CDbException' with message 'La tabla "historia_social" definida en la clase active record "HistoriaSocial" no se ha podido encontrar en la base de datos.' in /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php:2385
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(HistoriaSocial))
+#1 /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 /var/www/sisscsj/yii/protected/controllers/HistoriaSocial/Read.php(24): CActiveRecord->__construct()
+#3 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Read->run()
+#4 /var/www/yii-framework/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#5 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(Read))
+#6 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Read), Array)
+#12 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('HistoriaSocial')
+#14 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#16 {main}
+REQUEST_URI=/sisscsj/yii/index.php/HistoriaSocial?filter=%5B%7B%22property%22%3A%22fk_id_beneficiario%22%2C%22value%22%3A48%7D%2C%7B%22property%22%3A%22estado_historia_social%22%2C%22value%22%3A1%7D%5D&limit=100&page=1&start=0&_dc=1445551124615&callback=Ext.data.JsonP.callback64
+HTTP_REFERER=http://192.168.1.110:8080/sisscsj/ext/index.html
+---
+2015/10/26 09:27:46 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sisscsj.historia_social' doesn't exist. La sentencia SQL ejecutada fue: SHOW FULL COLUMNS FROM `historia_social`.
+in /var/www/sisscsj/yii/protected/controllers/HistoriaSocial/Read.php (24)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/26 09:27:46 [error] [exception.CDbException] exception 'CDbException' with message 'La tabla "historia_social" definida en la clase active record "HistoriaSocial" no se ha podido encontrar en la base de datos.' in /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php:2385
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(HistoriaSocial))
+#1 /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 /var/www/sisscsj/yii/protected/controllers/HistoriaSocial/Read.php(24): CActiveRecord->__construct()
+#3 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Read->run()
+#4 /var/www/yii-framework/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#5 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(Read))
+#6 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Read), Array)
+#12 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('HistoriaSocial')
+#14 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#16 {main}
+REQUEST_URI=/sisscsj/yii/index.php/HistoriaSocial?_dc=1445866066848&page=1&start=0&limit=10&filter=%5B%7B%22property%22%3A%22fk_id_beneficiario%22%2C%22value%22%3A48%7D%5D&callback=Ext.data.JsonP.callback28
+HTTP_REFERER=http://localhost/sisscsj/index.html
+---
+2015/10/26 09:28:02 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sisscsj.historia_social' doesn't exist. La sentencia SQL ejecutada fue: SHOW FULL COLUMNS FROM `historia_social`.
+in /var/www/sisscsj/yii/protected/controllers/HistoriaSocial/Read.php (24)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/26 09:28:02 [error] [exception.CDbException] exception 'CDbException' with message 'La tabla "historia_social" definida en la clase active record "HistoriaSocial" no se ha podido encontrar en la base de datos.' in /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php:2385
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(HistoriaSocial))
+#1 /var/www/yii-framework/yii/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 /var/www/sisscsj/yii/protected/controllers/HistoriaSocial/Read.php(24): CActiveRecord->__construct()
+#3 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Read->run()
+#4 /var/www/yii-framework/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#5 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(Read))
+#6 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Read), Array)
+#12 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('HistoriaSocial')
+#14 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#16 {main}
+REQUEST_URI=/sisscsj/yii/index.php/HistoriaSocial?_dc=1445866066848&page=1&start=0&limit=10&filter=%5B%7B%22property%22%3A%22fk_id_beneficiario%22%2C%22value%22%3A48%7D%5D&callback=Ext.data.JsonP.callback28
+---
+2015/10/26 10:52:39 [error] [system.db.CDbCommand] CDbCommand::() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's' at line 1. La sentencia SQL ejecutada fue: SELECT CONCAT(left(`primer_nombre_beneficiario`,1),left(`segundo_nombre_beneficiario`,1),left(`apellido_paterno_beneficiario`,1),left(`apellido_materno_beneficiario`,1),'-',replace(`fecha_nacimiento_beneficiario`,'-','')) AS CAMPO FROM `beneficiario` WHERE `codigo_beneficiario` NOT LIKE '%-%'s.
+in /var/www/sisscsj/yii/protected/controllers/Beneficiario/Create.php (23)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/26 10:52:39 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's' at line 1. The SQL statement executed was: SELECT CONCAT(left(`primer_nombre_beneficiario`,1),left(`segundo_nombre_beneficiario`,1),left(`apellido_paterno_beneficiario`,1),left(`apellido_materno_beneficiario`,1),'-',replace(`fecha_nacimiento_beneficiario`,'-','')) AS CAMPO FROM `beneficiario` WHERE `codigo_beneficiario` NOT LIKE '%-%'s' in /var/www/yii-framework/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/db/CDbCommand.php(377): CDbCommand->queryInternal('', 0, Array)
+#1 /var/www/sisscsj/yii/protected/controllers/Beneficiario/Create.php(23): CDbCommand->query()
+#2 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Create->run()
+#3 /var/www/yii-framework/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#4 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(Create))
+#5 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii-framework/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii-framework/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(Create), Array)
+#11 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#12 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('beneficiario/cr...')
+#13 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#14 /var/www/sisscsj/yii/index.php(18): CApplication->run()
+#15 {main}
+REQUEST_URI=/sisscsj/yii/index.php/beneficiario/create?records={%22id_beneficiario%22:%221668%22,%22fk_id_religion%22:%221%22,%22fk_id_entidad_salud%22:%221%22,%22fk_id_curso%22:%221%22,%22fk_id_nivel%22:%22%22,%22fk_id_turno%22:%22%22,%22fk_id_formacion%22:%22%22,%22codigo_beneficiario%22:%22COD-FER%22,%22primer_nombre_beneficiario%22:%22prueba%22,%22segundo_nombre_beneficiario%22:%22prueba%22,%22apellido_paterno_beneficiario%22:%22prueba%22,%22apellido_materno_beneficiario%22:%22prueba%22,%22fecha_nacimiento_beneficiario%22:%222015-05-09%22,%22sexo_beneficiario%22:%22m%22,%22numero_hijo_beneficiario%22:%221%22,%22fotografia_beneficiario%22:%22foto2.jpg%22,%22trabaja_beneficiario%22:%221%22,%22observacion_beneficiario%22:%22ninguna%22,%22carnet_de_salud_beneficiario%22:%2256464%22,%22libreta_escolar_beneficiario%22:%220%22,%22informacion_relevante_beneficiario%22:%22%22}&callback=Ext
+---
+2015/10/26 11:05:09 [error] [php] trim() expects at most 2 parameters, 3 given (/var/www/sisscsj/yii/protected/controllers/Beneficiario/Create.php:96)
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/web/CController.php(308): Create->runWithParams()
+#1 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): BeneficiarioController->runAction()
+#2 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/yii-framework/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): BeneficiarioController->filterAccessControl()
+#5 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/yii-framework/yii/framework/web/CController.php(265): BeneficiarioController->runActionWithFilters()
+#8 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): BeneficiarioController->run()
+#9 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /var/www/sisscsj/yii/index.php(18): CWebApplication->run()
+REQUEST_URI=/sisscsj/yii/index.php/beneficiario/create?records={%22id_beneficiario%22:%221668%22,%22fk_id_religion%22:%221%22,%22fk_id_entidad_salud%22:%221%22,%22fk_id_curso%22:%221%22,%22fk_id_nivel%22:%22%22,%22fk_id_turno%22:%22%22,%22fk_id_formacion%22:%22%22,%22codigo_beneficiario%22:%22COD-FER%22,%22primer_nombre_beneficiario%22:%22prueba%22,%22segundo_nombre_beneficiario%22:%22srueba%22,%22apellido_paterno_beneficiario%22:%22prueba%22,%22apellido_materno_beneficiario%22:%22prueba%22,%22fecha_nacimiento_beneficiario%22:%222015-05-09%22,%22sexo_beneficiario%22:%22m%22,%22numero_hijo_beneficiario%22:%221%22,%22fotografia_beneficiario%22:%22foto2.jpg%22,%22trabaja_beneficiario%22:%221%22,%22observacion_beneficiario%22:%22ninguna%22,%22carnet_de_salud_beneficiario%22:%2256464%22,%22libreta_escolar_beneficiario%22:%220%22,%22informacion_relevante_beneficiario%22:%22%22}&callback=Ext
+in /var/www/sisscsj/yii/protected/controllers/Beneficiario/Create.php (96)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/26 11:05:42 [error] [php] trim() expects at most 2 parameters, 3 given (/var/www/sisscsj/yii/protected/controllers/Beneficiario/Create.php:96)
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/web/CController.php(308): Create->runWithParams()
+#1 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): BeneficiarioController->runAction()
+#2 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/yii-framework/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): BeneficiarioController->filterAccessControl()
+#5 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/yii-framework/yii/framework/web/CController.php(265): BeneficiarioController->runActionWithFilters()
+#8 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): BeneficiarioController->run()
+#9 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /var/www/sisscsj/yii/index.php(18): CWebApplication->run()
+REQUEST_URI=/sisscsj/yii/index.php/beneficiario/create?records={%22id_beneficiario%22:%221668%22,%22fk_id_religion%22:%221%22,%22fk_id_entidad_salud%22:%221%22,%22fk_id_curso%22:%221%22,%22fk_id_nivel%22:%22%22,%22fk_id_turno%22:%22%22,%22fk_id_formacion%22:%22%22,%22codigo_beneficiario%22:%22COD-FER%22,%22primer_nombre_beneficiario%22:%22prueba%22,%22segundo_nombre_beneficiario%22:%22srueba%22,%22apellido_paterno_beneficiario%22:%22prueba%22,%22apellido_materno_beneficiario%22:%22prueba%22,%22fecha_nacimiento_beneficiario%22:%222015-05-09%22,%22sexo_beneficiario%22:%22m%22,%22numero_hijo_beneficiario%22:%221%22,%22fotografia_beneficiario%22:%22foto2.jpg%22,%22trabaja_beneficiario%22:%221%22,%22observacion_beneficiario%22:%22ninguna%22,%22carnet_de_salud_beneficiario%22:%2256464%22,%22libreta_escolar_beneficiario%22:%220%22,%22informacion_relevante_beneficiario%22:%22%22}&callback=Ext
+in /var/www/sisscsj/yii/protected/controllers/Beneficiario/Create.php (96)
+in /var/www/sisscsj/yii/index.php (18)
+2015/10/26 16:45:23 [error] [php] Cannot modify header information - headers already sent by (output started at /var/www/sisscsj/yii/protected/vendors/mpdf/mpdf.php:7460) (/var/www/sisscsj/yii/protected/vendors/mpdf/mpdf.php:7464)
+Stack trace:
+#0 /var/www/yii-framework/yii/framework/web/actions/CAction.php(76): Reporte1->run()
+#1 /var/www/yii-framework/yii/framework/web/CController.php(308): Reporte1->runWithParams()
+#2 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(133): ReporteController->runAction()
+#3 /var/www/yii-framework/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /var/www/yii-framework/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /var/www/yii-framework/yii/framework/web/filters/CInlineFilter.php(58): ReporteController->filterAccessControl()
+#6 /var/www/yii-framework/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /var/www/yii-framework/yii/framework/web/CController.php(291): CFilterChain->run()
+#8 /var/www/yii-framework/yii/framework/web/CController.php(265): ReporteController->runActionWithFilters()
+#9 /var/www/yii-framework/yii/framework/web/CWebApplication.php(282): ReporteController->run()
+#10 /var/www/yii-framework/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /var/www/yii-framework/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /var/www/sisscsj/yii/index.php(18): CWebApplication->run()
+REQUEST_URI=/sisscsj/yii/index.php/reporte/reporte1?start=2015-10-02&limit=2015-10-03
+in /var/www/sisscsj/yii/protected/vendors/mpdf/mpdf.php (7464)
+in /var/www/sisscsj/yii/protected/controllers/Reporte/Reporte1.php (89)
+in /var/www/sisscsj/yii/index.php (18)

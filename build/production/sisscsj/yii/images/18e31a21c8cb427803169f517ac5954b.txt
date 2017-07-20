@@ -1,0 +1,51 @@
+- Cambiar el orden de los botones de editar y eliminar en las opciones (revisar)
+- Habilitar la restricción de editar y eliminar sin haber elegido un registro en todas las opciones
+- Cambiar los margenes "margins" de los campos en formularios.
+- Aumentar las lineas: grid.getStore().reload(); y grid.getView().refresh(); luego de la eliminación y edición en todos los grids.
+- Eliminar del código a la función Ext.getCmp(), con lo siguiente:
+
+            var grid2 = me.getBeneficiarioTelefonoLista();
+            var botonEdit = grid2.down("[xtype='toolbar'] button#edit");
+            var botonDelete = grid2.down("[xtype='toolbar'] button#delete");
+
+            if ( botonEdit.enabled || botonDelete.enabled )
+            {
+                botonEdit.disable();
+                botonDelete.disable();
+            }
+
+- Añadir validación de registros repetidos en grids donde no debe existir repetidos.
+- Crear reportes faltantes
+- Añadir librería para gráficos y probar
+- validar todas las partes donde se utiliza ItemSelector con:
+
+	for (var i = 0; i < arrayLength; i++) {
+
+- Añadir el siguiente código para obligar al usuario a seleccionar nuevamente los registros (para evitar bug)
+		me.deshabilitarBotones();
+                grid.getSelectionModel().clearSelections();
+
+- Poner la opción de Créditos en el sistema.
+- Implementar versionamiento.
+- Poner la funcion manejaBotones en los controladores (eliminar las funciones de habilitarBotones y deshabilitarBotones).
+- Validar en beneficiarios, que se ponga entidad y estado.
+- Validar que en familia se llene al menos un miembro
+- Cuando se ordena un grid haciendo click en la cabecera, no se filtran los datos (muestra datos de otros usuarios)
+- Crear vistas (yii) e interfaces (ext) para aplicar la tabla de nelson ortiz
+- Crear los usuarios de todas las entidades
+- Desarrollar parte de privilegios
+- Eliminar cambios de texto a español en paginadores (ya lo traduce con el archivo ext_es.js)
+- Poner los controles de fecha y hora donde corresponda
+
+
+================================
+- Cargar y probar reportes
+- Migrar a ExtJS 4.2.2 y probar
+- Cambiar los colores del tema a los colores de san josé
+- Revisar los iconos del menu
+- Prevenir que el usuario se vaya fuera del navegador
+- Habilitar logueo al sistema
+- Modificar todos los mensajes, para que tenga el texto cambiado a español
+- Modificar el campo de fecha para que se muestre la fecha en español
+- desarrollar parte para cargar foto de beneficiario
+- Añadir "modalidad" al módulo de beneficiarios (base centro, base hogar)
